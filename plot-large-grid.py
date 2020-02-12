@@ -19,8 +19,8 @@ import re
 import cantera as ct
 
 # set up the LSR grid, for the smaller, more interesting one
-carbon_range = (-7.5, -5.5)
-oxygen_range = (-5.25, -3.25)
+carbon_range = (-8.0, -2.0)
+oxygen_range = (-6.5, -1.5)
 grid_size = 9
 mesh  = np.mgrid[carbon_range[0]:carbon_range[1]:grid_size*1j,
                  oxygen_range[0]:oxygen_range[1]:grid_size*1j]
@@ -29,7 +29,7 @@ with sns.axes_style("whitegrid"):
     plt.axis('square')
     plt.xlim(carbon_range)
     plt.ylim(oxygen_range)
-    plt.yticks(np.arange(-5.25,-3,0.5))
+    plt.yticks(np.arange(-6.5,-1,0.5))
 plt.show()
 
 # just to double-check
@@ -39,7 +39,7 @@ with sns.axes_style("whitegrid"):
     plt.axis('square')
     plt.xlim(carbon_range)
     plt.ylim(oxygen_range)
-    plt.yticks(np.arange(-5.25,-3,0.5))
+    plt.yticks(np.arange(-6.5,-1.,0.5))
     plt.plot(*experiments.T, marker='o', linestyle='none')
 plt.clf()
 extent = carbon_range + oxygen_range
@@ -167,7 +167,7 @@ def lavaPlot(overall_rate, title, axis=False, folder=False, interpolation=True):
         plt.text(coords[0], coords[1]-0.1, metal, color=color)
     plt.xlim(carbon_range)
     plt.ylim(oxygen_range)
-    plt.yticks(np.arange(-5.25,-3.,0.5))
+    plt.yticks(np.arange(-6.5,-1.,0.5))
     plt.xlabel('$\Delta E^C$ (eV)')
     plt.ylabel('$\Delta E^O$ (eV)')
 #     plt.title(str(title))
