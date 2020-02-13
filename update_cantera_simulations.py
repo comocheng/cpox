@@ -6,7 +6,7 @@ import shutil
 import subprocess
 import multiprocessing
 
-with open(os.path.join('base', 'simulations.py')) as infile:
+with open(os.path.join('rh', 'simulations.py')) as infile:
     input_file = infile.read()
 
 base_directory = 'large-grid'
