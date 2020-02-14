@@ -306,6 +306,58 @@ for f in range(len(allrxndata)):  # for each lsr binding energy
 reactions = list(reactions)
 
 
+def sensPlot(overall_rate, title, axis=False, folder=False):
+    """
+    overall sensitivity data to plot
+    title is a string for what definition is used
+    to normalize colors across many plots, False doesn't normalize axes
+    folder specifies where to save the images
+    """
+    cmap = plt.get_cmap("Spectral_r")
+    # cmap.set_bad(color='k', alpha=None)
+    cmaplist = list(map(cmap,range(256)))
+    cmaplist[0]=(0,0,0,0.3)
+    newcmap = cmap.from_list('newcmap',cmaplist, N=256)
+    cmap = newcmap
+
+    overall_rate = np.array(overall_rate)
+    rates = overall_rate
+
+    rates_grid = np.reshape(rates, (grid_size,grid_size))
+    for i in range(0,8):  # transpose by second diagnol
+        for j in range(0, 8 - i):
+            rates_grid[i][j], rates_grid[8 - j][8 - i] = rates_grid[8 - j][8 - i], rates_grid[i][j]
+    if axis is False:  # no normalizing
+        plt.imshow(rates_grid, origin='lower',
+                   extent=extent2, aspect='equal', cmap="Spectral_r",)
+    else:
+        plt.imshow(rates_grid, origin='lower',
+               extent=extent2, aspect='equal', cmap="Spectral_r",
+               vmin=axis[0], vmax=axis[1],)
+
+    # adding metal values to the plot
+    for metal, coords in abildpedersen_energies.items():
+        color = {'Ag':'k','Au':'k','Cu':'k'}.get(metal,'k')
+        plt.plot(coords[0], coords[1], 'o'+color)
+        plt.text(coords[0], coords[1]-0.1, metal, color=color)
+    plt.xlim(carbon_range)
+    plt.ylim(oxygen_range)
+    plt.yticks(np.arange(-5.25,-3.,0.5))
+    plt.xlabel('$\Delta E^C$ (eV)')
+    plt.ylabel('$\Delta E^O$ (eV)')
+#     plt.title(str(title))
+    plt.colorbar()
+    out_dir = 'lsr'
+    os.path.exists(out_dir) or os.makedirs(out_dir)
+    if folder is False:
+        plt.savefig(out_dir + '/' + str(title) +'.pdf', bbox_inches='tight')
+    else:
+        os.path.exists(out_dir + '/' + str(folder)) or os.makedirs(out_dir + '/' + str(folder))
+        plt.savefig(out_dir + '/' + str(folder) + '/' + str(title) +'.pdf', bbox_inches='tight')
+    plt.show()  # comment out to save fig
+    plt.clf()
+
+
 def plot_sensitivities(all_data):
     """
     all_data is either allrxndata or allthermodata
