@@ -17,16 +17,6 @@ catalystProperties( # default values for Rh(111)
     surfaceSiteDensity=(2.72e-9, 'mol/cm^2'),
 )
 
-# catalystProperties( # default values for Pt(111)
-#     bindingEnergies = {
-#                        'C':(-6.750, 'eV/molecule'),
-#                        'O':(-3.586, 'eV/molecule'),
-#                        'N':(-4.352, 'eV/molecule'),
-#                        'H':(-2.479, 'eV/molecule'),
-#                        },
-#     surfaceSiteDensity=(2.72e-9, 'mol/cm^2'),
-# )
-
 # List of species
 species(
     label='X',
