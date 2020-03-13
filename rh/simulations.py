@@ -283,8 +283,7 @@ def monolithFull(gas, surf, temp, mol_in, verbose=False, sens=False):
 
     gas_names = gas.species_names
     surf_names = surf.species_names
-    gas_out = []  # in
-
+    gas_out = []
     surf_out = []
     dist_array = []
     T_array = []
@@ -310,34 +309,34 @@ def monolithFull(gas, surf, temp, mol_in, verbose=False, sens=False):
         surf_out.append(surf.X.copy())
 
         # make reaction diagrams
-        out_dir = 'rxnpath'
-        os.path.exists(out_dir) or os.makedirs(out_dir)
-        elements = ['H', 'O']
-        locations_of_interest = [1000, 1200, 1400, 1600, 1800, 1999]
-        if sens is False:
-            for l in locations_of_interest:
-                if n == l:
-                    location = str(int(n / 100))
-                    diagram = ct.ReactionPathDiagram(surf, 'X')
-                    diagram.title = 'rxn path'
-                    diagram.label_threshold = 1e-9
-                    dot_file = out_dir + '/rxnpath-' + str(ratio) + '-x-' + location + 'mm.dot'
-                    img_file = out_dir + '/rxnpath-' + str(ratio) + '-x-' + location + 'mm.pdf'
-                    img_path = os.path.join(out_dir, img_file)
-                    diagram.write_dot(dot_file)
-                    os.system('dot {0} -Tpng -o{1} -Gdpi=200'.format(dot_file, img_file))
-
-                    for element in elements:
-                        diagram = ct.ReactionPathDiagram(surf, element)
-                        diagram.title = element + 'rxn path'
-                        diagram.label_threshold = 1e-9
-                        dot_file = out_dir + '/rxnpath-' + str(ratio) + '-surf-' + location + 'mm-' + element + '.dot'
-                        img_file = out_dir + '/rxnpath-' + str(ratio) + '-surf-' + location + 'mm-' + element + '.pdf'
-                        img_path = os.path.join(out_dir, img_file)
-                        diagram.write_dot(dot_file)
-                        os.system('dot {0} -Tpng -o{1} -Gdpi=200'.format(dot_file, img_file))
-        else:
-            pass
+        # out_dir = 'rxnpath'
+        # os.path.exists(out_dir) or os.makedirs(out_dir)
+        # elements = ['H', 'O']
+        # locations_of_interest = [1000, 1200, 1400, 1600, 1800, 1999]
+        # if sens is False:
+        #     for l in locations_of_interest:
+        #         if n == l:
+        #             location = str(int(n / 100))
+        #             diagram = ct.ReactionPathDiagram(surf, 'X')
+        #             diagram.title = 'rxn path'
+        #             diagram.label_threshold = 1e-9
+        #             dot_file = out_dir + '/rxnpath-' + str(ratio) + '-x-' + location + 'mm.dot'
+        #             img_file = out_dir + '/rxnpath-' + str(ratio) + '-x-' + location + 'mm.pdf'
+        #             img_path = os.path.join(out_dir, img_file)
+        #             diagram.write_dot(dot_file)
+        #             os.system('dot {0} -Tpng -o{1} -Gdpi=200'.format(dot_file, img_file))
+        #
+        #             for element in elements:
+        #                 diagram = ct.ReactionPathDiagram(surf, element)
+        #                 diagram.title = element + 'rxn path'
+        #                 diagram.label_threshold = 1e-9
+        #                 dot_file = out_dir + '/rxnpath-' + str(ratio) + '-surf-' + location + 'mm-' + element + '.dot'
+        #                 img_file = out_dir + '/rxnpath-' + str(ratio) + '-surf-' + location + 'mm-' + element + '.pdf'
+        #                 img_path = os.path.join(out_dir, img_file)
+        #                 diagram.write_dot(dot_file)
+        #                 os.system('dot {0} -Tpng -o{1} -Gdpi=200'.format(dot_file, img_file))
+        # else:
+        #     pass
 
         if verbose is True:
             if not n % 100:
@@ -361,17 +360,13 @@ def simulationWorker(ratio):
     far = 79 * fo2 / 21
     ratio_in = [fch4, fo2, far]  # mol fractions
 
-    try:
-        a = monolithFull(gas, surf, t_in, ratio_in)
-        print("Finished simulation at a C/O ratio of {:.1f}".format(ratio))
-        gas_out, surf_out, gas_names, surf_names, dist_array, T_array = a
-        plot_gas(a)
-        plot_gas(a, x_lim=(8,25))
-        plot_surf(a)
-        return [ratio, [gas_out, gas_names, dist_array, T_array]]
-    except:
-        print('Unable to run simulation at a C/O ratio of {:.1f}'.format(ratio))
-        pass
+    a = monolithFull(gas, surf, t_in, ratio_in)
+    print("Finished simulation at a C/O ratio of {:.1f}".format(ratio))
+    gas_out, surf_out, gas_names, surf_names, dist_array, T_array = a
+    plot_gas(a)
+    plot_gas(a, x_lim=(8,25))
+    plot_surf(a)
+    return [ratio, [gas_out, gas_names, dist_array, T_array]]
 
 
 ratios = [.6, .7, .8, .9, 1., 1.1, 1.2, 1.3, 1.4, 1.6, 1.8, 2., 2.2, 2.4, 2.6]
