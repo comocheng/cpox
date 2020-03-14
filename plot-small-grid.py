@@ -254,6 +254,7 @@ for x in array:
     o_s.append(o)
 
 ratios = [0.6, 0.7, 0.8, 0.9, 1.0, 1.1, 1.2, 1.3, 1.4, 1.6, 1.8, 2.0, 2.2, 2.4, 2.6]
+ratios_title = ['06', '07', '08', '09', '10', '11', '12', '13', '14', '16', '18', '20', '22', '24', '26']
 sens_types = ['SynGasSelec', 'SynGasYield', 'COSelec', 'COYield', 'H2Selec',
               'H2Yield', 'CH4Conv', 'FullOxSelec', 'FullOxYield', 'ExitT',
               'MaxT', 'DistToMaxT', 'O2Conv']
@@ -292,7 +293,7 @@ def basePlotWorker(ratio):
         data_to_plot = []
         for x in range(len(all_data[ratio])):
             data_to_plot.append(all_data[ratio][x][s])
-        title = sens_types[s] + str(ratios[ratio])
+        title = sens_types[s] + str(ratios_title[ratio])
         lavaPlot(data_to_plot, title, axis=spans[s], folder='base', interpolation=False)
 
 
