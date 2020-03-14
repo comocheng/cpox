@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "simulations.py", line 578, in <module>
+    ratio_comparison.append([r[0], calculate(r[1], type='ratio')])
+  File "simulations.py", line 496, in calculate
+    return reference_co_sel, reference_h2_sel, reference_ch4_conv, reference_exit_temp, reference_o2_conv, reference_co2_sel, reference_h2o_sel
+UnboundLocalError: local variable 'reference_co2_sel' referenced before assignment

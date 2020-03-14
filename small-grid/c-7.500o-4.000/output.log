@@ -1,0 +1,163 @@
+This mechanism contains 38 gas reactions and 41 surface reactions
+Finished simulation at a C/O ratio of 0.8
+Finished simulation at a C/O ratio of 0.7
+Finished simulation at a C/O ratio of 0.9
+Finished simulation at a C/O ratio of 1.1
+Finished simulation at a C/O ratio of 1.0
+Finished simulation at a C/O ratio of 1.4
+Finished simulation at a C/O ratio of 1.3
+Finished simulation at a C/O ratio of 2.6
+Finished simulation at a C/O ratio of 1.8
+Finished simulation at a C/O ratio of 2.2
+Finished simulation at a C/O ratio of 2.4
+Finished simulation at a C/O ratio of 1.2
+Finished simulation at a C/O ratio of 1.6
+Finished simulation at a C/O ratio of 2.0
+Finished simulation at a C/O ratio of 0.6
+Starting sensitivity simulation for a C/O ratio of 1.4
+
+***********************************************************************
+CanteraError thrown by CVodesIntegrator::step:
+CVodes error encountered. Error code: -3
+
+At t = 6.06124e+06 and h = 1.34587e-18, the error test failed repeatedly or with |h| = hmin.
+Components with largest weighted error estimates:
+34: -13.3534
+35: 0.105309
+33: -0.00171118
+26: -0.000633372
+28: -1.66344e-06
+25: 1.54905e-06
+39: -7.53075e-07
+29: 1.84814e-07
+27: -3.22173e-10
+30: 6.43014e-11
+***********************************************************************
+
+Starting sensitivity simulation for a C/O ratio of 0.8
+
+***********************************************************************
+CanteraError thrown by CVodesIntegrator::step:
+CVodes error encountered. Error code: -3
+
+At t = 1.39454e+07 and h = 3.09651e-18, the error test failed repeatedly or with |h| = hmin.
+Components with largest weighted error estimates:
+34: -44.8437
+35: 0.245478
+26: -0.00557454
+33: -0.00550156
+28: -0.000150716
+25: 1.88196e-05
+39: -6.70081e-06
+29: 2.16933e-06
+27: -5.21688e-09
+30: 1.76546e-10
+***********************************************************************
+
+Starting sensitivity simulation for a C/O ratio of 1.1
+
+***********************************************************************
+CanteraError thrown by CVodesIntegrator::step:
+CVodes error encountered. Error code: -3
+
+At t = 7.42091e+06 and h = 1.64777e-18, the error test failed repeatedly or with |h| = hmin.
+Components with largest weighted error estimates:
+34: -21.8859
+35: 0.129789
+33: -0.00253018
+26: -0.00161738
+28: -1.1443e-05
+25: 4.74788e-06
+39: -1.92445e-06
+29: 5.64231e-07
+27: -1.18065e-09
+38: -4.43566e-11
+***********************************************************************
+
+Starting sensitivity simulation for a C/O ratio of 1.3
+
+***********************************************************************
+CanteraError thrown by CVodesIntegrator::step:
+CVodes error encountered. Error code: -3
+
+At t = 6.52023e+06 and h = 1.44778e-18, the error test failed repeatedly or with |h| = hmin.
+Components with largest weighted error estimates:
+34: -16.5627
+35: 0.113536
+33: -0.00197267
+26: -0.000886407
+28: -3.32981e-06
+25: 2.31851e-06
+39: -1.05431e-06
+29: 2.76564e-07
+27: -5.15636e-10
+38: -4.1338e-11
+***********************************************************************
+
+Starting sensitivity simulation for a C/O ratio of 0.9
+
+***********************************************************************
+CanteraError thrown by CVodesIntegrator::step:
+CVodes error encountered. Error code: -3
+
+At t = 1.07623e+07 and h = 2.38972e-18, the error test failed repeatedly or with |h| = hmin.
+Components with largest weighted error estimates:
+34: -34.1061
+35: 0.189048
+33: -0.00405833
+26: -0.00356119
+28: -5.84542e-05
+25: 1.15148e-05
+39: -4.25801e-06
+29: 1.34748e-06
+27: -3.10483e-09
+32: 7.67438e-11
+***********************************************************************
+
+Starting sensitivity simulation for a C/O ratio of 0.7
+Finished sensitivity simulation for a C/O ratio of 0.7
+Finished translating for C/O ratio of 0.7
+Starting sensitivity simulation for a C/O ratio of 1.2
+
+***********************************************************************
+CanteraError thrown by CVodesIntegrator::step:
+CVodes error encountered. Error code: -3
+
+At t = 5.85551e+06 and h = 1.30019e-18, the error test failed repeatedly or with |h| = hmin.
+Components with largest weighted error estimates:
+34: -16.2373
+35: 0.102187
+33: -0.00188598
+26: -0.0010165
+28: -4.46249e-06
+25: 2.82466e-06
+39: -1.20683e-06
+29: 3.38212e-07
+27: -6.70001e-10
+30: 6.11009e-11
+***********************************************************************
+
+Starting sensitivity simulation for a C/O ratio of 1.6
+Finished sensitivity simulation for a C/O ratio of 1.6
+Finished translating for C/O ratio of 1.6
+Starting sensitivity simulation for a C/O ratio of 1.0
+Finished sensitivity simulation for a C/O ratio of 1.0
+Finished translating for C/O ratio of 1.0
+Starting sensitivity simulation for a C/O ratio of 2.0
+Finished sensitivity simulation for a C/O ratio of 2.0
+Finished translating for C/O ratio of 2.0
+Starting sensitivity simulation for a C/O ratio of 1.8
+Finished sensitivity simulation for a C/O ratio of 1.8
+Finished translating for C/O ratio of 1.8
+Starting sensitivity simulation for a C/O ratio of 0.6
+Finished sensitivity simulation for a C/O ratio of 0.6
+Finished translating for C/O ratio of 0.6
+Starting sensitivity simulation for a C/O ratio of 2.6
+Finished sensitivity simulation for a C/O ratio of 2.6
+Finished translating for C/O ratio of 2.6
+Starting sensitivity simulation for a C/O ratio of 2.2
+Finished sensitivity simulation for a C/O ratio of 2.2
+Finished translating for C/O ratio of 2.2
+Starting sensitivity simulation for a C/O ratio of 2.4
+Finished sensitivity simulation for a C/O ratio of 2.4
+Finished translating for C/O ratio of 2.4
