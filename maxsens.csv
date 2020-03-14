@@ -1,0 +1,612 @@
+,Reaction,Sens Type,Maximum
+0,C=[Pt] + [Pt] <=> C[Pt] + [Pt],COYield,465.18352779509354
+1,C + O=[Pt] + [Pt] <=> C[Pt] + O[Pt],COYield,458.21903241274737
+2,C=[Pt] + [Pt] <=> C[Pt] + [Pt],COSelec,274.30693178084147
+3,C + O=[Pt] + [Pt] <=> C[Pt] + O[Pt],COSelec,271.927873260064
+4,[H] + [Pt] <=> [Pt],ExitT,250.17508754377187
+5,C~[Pt] + [H][H] <=> C=[Pt],ExitT,250.12506253126563
+6,[H][H] + [Pt] <=> [H][H].[Pt],ExitT,250.12506253126563
+7,C + [Pt] <=> C.[Pt],ExitT,250.12506253126563
+8,C=[Pt] + O=C[Pt] <=> C[Pt] + O=C=[Pt],ExitT,250.0250125062531
+9,C~[Pt] + O[Pt] <=> C#[Pt] + O=[Pt],ExitT,250.0250125062531
+10,O=C=O + [Pt] <=> O=C=O.[Pt],ExitT,249.9249624812407
+11,C + O[Pt] + [Pt] <=> C[Pt] + O.[Pt],ExitT,249.8249124562281
+12,[CH]=O + [Pt] <=> O=C[Pt],ExitT,249.77488744372192
+13,[Pt] + O=[Pt] <=> O[Pt] + [Pt],ExitT,249.77488744372192
+14,O[Pt] + [Pt] <=> O.[Pt] + [Pt],ExitT,249.77488744372192
+15,C=[Pt] + [Pt] <=> C[Pt] + [Pt],ExitT,249.62481240620315
+16,CO + 2 [Pt] <=> C[Pt] + O[Pt],ExitT,249.60039960039958
+17,C~[Pt] + O=[Pt] <=> O=C=[Pt] + [Pt],ExitT,249.55
+18,[H][H] + 2 [Pt] <=> 2 [Pt],ExitT,249.37593609585625
+19,O=C=[Pt] + O=[Pt] <=> O=C=O.[Pt] + [Pt],ExitT,249.32466233116557
+20,O.[Pt] + O=[Pt] <=> 2 O[Pt],ExitT,249.25000000000003
+21,2 C=[Pt] <=> C[Pt] + C#[Pt],ExitT,249.15169660678643
+22,[OH] + [Pt] <=> O[Pt],ExitT,249.1017964071856
+23,CC + 2 [Pt] <=> 2 C[Pt],ExitT,249.1017964071856
+24,O=C=O.[Pt] + [Pt] <=> O[Pt] + O=C=[Pt],ExitT,249.02646030953568
+25,C[Pt] + C~[Pt] <=> C=[Pt] + C#[Pt],ExitT,249.00199600798402
+26,C#[Pt] + [Pt] <=> C=[Pt] + [Pt],ExitT,248.92768079800499
+27,O + [Pt] <=> O.[Pt],ExitT,248.65403788634086
+28,C#[Pt] + [Pt] <=> C~[Pt] + [Pt],ExitT,248.62842892768086
+29,[C-]#[O+] + [Pt] <=> O=C=[Pt],ExitT,248.605577689243
+30,C + O=[Pt] + [Pt] <=> C[Pt] + O[Pt],ExitT,248.5044865403788
+31,[O][O] + 2 [Pt] <=> 2 O=[Pt],ExitT,248.3822797411648
+32,CC=O + 2 [Pt] <=> C[Pt] + O=C[Pt],ExitT,248.28272772523638
+33,[CH3] + [Pt] <=> C[Pt],ExitT,248.27413706853423
+34,O=C[Pt] + C#[Pt] <=> C=[Pt] + O=C=[Pt],ExitT,248.08552958727
+35,[C-]#[O+] + [Pt] <=> [C-]#[O+].[Pt],ExitT,247.886623570363
+36,C + 2 [Pt] <=> C[Pt] + [Pt],ExitT,247.82825761357967
+37,[CH]C + 2 [Pt] <=> C[Pt] + C#[Pt],ExitT,247.73744405768275
+38,O[Pt] + O=C=[Pt] <=> O=C[Pt] + O=[Pt],ExitT,247.58345789735924
+39,C=[Pt] + C~[Pt] <=> 2 C#[Pt],ExitT,247.55
+40,C#[Pt] + O[Pt] <=> C=[Pt] + O=[Pt],ExitT,247.23743155798905
+41,C=[Pt] + O[Pt] <=> C[Pt] + O=[Pt],ExitT,247.07050645481633
+42,O + 2 [Pt] <=> O[Pt] + [Pt],ExitT,246.8562874251497
+43,[CH3] + [Pt] <=> [CH3].[Pt],ExitT,246.77898909811694
+44,O=C[Pt] + C~[Pt] <=> C#[Pt] + O=C=[Pt],ExitT,246.72943508424183
+45,O=C[Pt] + [Pt] <=> [Pt] + O=C=[Pt],ExitT,246.28344895936576
+46,C=C + [Pt] <=> C=C.[Pt],ExitT,244.77091633466134
+47,O=C[Pt] + O=[Pt] <=> O[Pt] + O=C=[Pt],ExitT,243.25535092085616
+48,C=O + 2 [Pt] <=> O=C[Pt] + [Pt],ExitT,242.54364089775564
+49,[CH]C + [Pt] <=> [CH]C.[Pt],ExitT,225.80167735569802
+50,O.[Pt] + O=[Pt] <=> 2 O[Pt],COYield,91.06074277449294
+51,[O][O] + 2 [Pt] <=> 2 O=[Pt],COYield,73.02558372587269
+52,[O][O] + 2 [Pt] <=> 2 O=[Pt],H2Yield,64.91340441865474
+53,O.[Pt] + O=[Pt] <=> 2 O[Pt],COSelec,62.80868483418121
+54,[O][O] + 2 [Pt] <=> 2 O=[Pt],COSelec,62.31539055849503
+55,C=[Pt] + [Pt] <=> C[Pt] + [Pt],O2Conv,62.21986430793294
+56,C=[Pt] + [Pt] <=> C[Pt] + [Pt],SynGasYield,61.945804837308216
+57,C + O=[Pt] + [Pt] <=> C[Pt] + O[Pt],O2Conv,61.41867248612426
+58,C + O=[Pt] + [Pt] <=> C[Pt] + O[Pt],SynGasYield,61.148804737642614
+59,[O][O] + 2 [Pt] <=> 2 O=[Pt],O2Conv,54.03764371669522
+60,C=[Pt] + [Pt] <=> C[Pt] + [Pt],H2Selec,50.99467303640832
+61,[O][O] + 2 [Pt] <=> 2 O=[Pt],CH4Conv,50.90469984719714
+62,[O][O] + 2 [Pt] <=> 2 O=[Pt],SynGasYield,50.459446140459846
+63,C + O=[Pt] + [Pt] <=> C[Pt] + O[Pt],H2Selec,50.08798010210509
+64,C=[Pt] + [Pt] <=> C[Pt] + [Pt],MaxT,49.04640325556264
+65,C + O=[Pt] + [Pt] <=> C[Pt] + O[Pt],MaxT,48.119967410312796
+66,[C-]#[O+] + [Pt] <=> O=C=[Pt],H2Yield,46.808535630001685
+67,CC=O + 2 [Pt] <=> C[Pt] + O=C[Pt],H2Yield,46.56475997478509
+68,C=[Pt] + [Pt] <=> C[Pt] + [Pt],CH4Conv,46.355208646259925
+69,[O][O] + 2 [Pt] <=> 2 O=[Pt],SynGasSelec,45.86052388007029
+70,C + O=[Pt] + [Pt] <=> C[Pt] + O[Pt],CH4Conv,45.401768329305256
+71,[O][O] + 2 [Pt] <=> 2 O=[Pt],H2Selec,42.71960931545857
+72,[O][O] + 2 [Pt] <=> 2 O=[Pt],DistToMaxT,40.238699166142716
+73,O + 2 [Pt] <=> O[Pt] + [Pt],SynGasSelec,34.667201683238375
+74,O + 2 [Pt] <=> O[Pt] + [Pt],DistToMaxT,34.565014684757024
+75,O + 2 [Pt] <=> O[Pt] + [Pt],COSelec,34.43009258664504
+76,C~[Pt] + O[Pt] <=> C#[Pt] + O=[Pt],H2Yield,33.6658212978108
+77,C=[Pt] + [Pt] <=> C[Pt] + [Pt],H2Yield,33.665799316423595
+78,O.[Pt] + O=[Pt] <=> 2 O[Pt],H2Yield,33.665547656758534
+79,O=C[Pt] + [Pt] <=> [Pt] + O=C=[Pt],H2Yield,33.66402424953134
+80,O=C=[Pt] + O=[Pt] <=> O=C=O.[Pt] + [Pt],H2Yield,33.53043414955468
+81,[OH] + [Pt] <=> O[Pt],H2Yield,33.52683410540579
+82,C~[Pt] + O=[Pt] <=> O=C=[Pt] + [Pt],H2Yield,32.6760217131928
+83,C=[Pt] + C~[Pt] <=> 2 C#[Pt],H2Yield,32.676021442742325
+84,2 C=[Pt] <=> C[Pt] + C#[Pt],H2Yield,32.67602143819709
+85,[H][H] + [Pt] <=> [H][H].[Pt],H2Yield,32.676021428988435
+86,C + O[Pt] + [Pt] <=> C[Pt] + O.[Pt],H2Yield,32.65613468474923
+87,C + 2 [Pt] <=> C[Pt] + [Pt],H2Yield,32.65368399588009
+88,CC + 2 [Pt] <=> 2 C[Pt],H2Yield,32.49651908153555
+89,C~[Pt] + [H][H] <=> C=[Pt],H2Yield,32.49651782733296
+90,C[Pt] + C~[Pt] <=> C=[Pt] + C#[Pt],H2Yield,32.49651778950496
+91,[CH3] + [Pt] <=> C[Pt],H2Yield,32.48356953905973
+92,C#[Pt] + [Pt] <=> C~[Pt] + [Pt],H2Yield,32.272860031390394
+93,C=[Pt] + O=C[Pt] <=> C[Pt] + O=C=[Pt],H2Yield,32.254566614590104
+94,[Pt] + O=[Pt] <=> O[Pt] + [Pt],H2Yield,32.22903216708939
+95,[C-]#[O+] + [Pt] <=> O=C=[Pt],CH4Conv,31.90147235003093
+96,CC=O + 2 [Pt] <=> C[Pt] + O=C[Pt],CH4Conv,31.85148491156169
+97,C + O=[Pt] + [Pt] <=> C[Pt] + O[Pt],H2Yield,29.01993750935536
+98,O + [Pt] <=> O.[Pt],H2Yield,28.96163576649
+99,O=C=O + [Pt] <=> O=C=O.[Pt],H2Yield,28.81634669986532
+100,C=O + 2 [Pt] <=> O=C[Pt] + [Pt],H2Yield,28.812761473945603
+101,CO + 2 [Pt] <=> C[Pt] + O[Pt],H2Yield,28.81276146310812
+102,C=[Pt] + O[Pt] <=> C[Pt] + O=[Pt],H2Yield,28.812761461886605
+103,O=C[Pt] + C#[Pt] <=> C=[Pt] + O=C=[Pt],H2Yield,28.802304989575983
+104,O=C[Pt] + C~[Pt] <=> C#[Pt] + O=C=[Pt],H2Yield,28.80230497679721
+105,[CH]C + 2 [Pt] <=> C[Pt] + C#[Pt],H2Yield,28.802304975680016
+106,C + [Pt] <=> C.[Pt],H2Yield,28.789095839789628
+107,O + 2 [Pt] <=> O[Pt] + [Pt],H2Yield,28.78696130739429
+108,[O][O] + 2 [Pt] <=> 2 O=[Pt],MaxT,28.55316187805201
+109,O=C=[Pt] + O=[Pt] <=> O=C=O.[Pt] + [Pt],COYield,28.04899701558237
+110,O[Pt] + [Pt] <=> O.[Pt] + [Pt],H2Yield,24.579346972606487
+111,[CH]=O + [Pt] <=> O=C[Pt],H2Yield,24.57753480168931
+112,C#[Pt] + O[Pt] <=> C=[Pt] + O=[Pt],H2Yield,24.577534674545355
+113,[C-]#[O+] + [Pt] <=> [C-]#[O+].[Pt],H2Yield,24.402095543015854
+114,[H][H] + 2 [Pt] <=> 2 [Pt],H2Yield,24.401679150818676
+115,[H] + [Pt] <=> [Pt],H2Yield,24.383312216803606
+116,C#[Pt] + [Pt] <=> C=[Pt] + [Pt],H2Yield,24.379844075559053
+117,O + 2 [Pt] <=> O[Pt] + [Pt],SynGasYield,24.128871804538104
+118,O + 2 [Pt] <=> O[Pt] + [Pt],O2Conv,24.034681410173068
+119,O.[Pt] + O=[Pt] <=> 2 O[Pt],CH4Conv,23.984812286300183
+120,C~[Pt] + O[Pt] <=> C#[Pt] + O=[Pt],CH4Conv,23.983776339084038
+121,O=C[Pt] + [Pt] <=> [Pt] + O=C=[Pt],CH4Conv,23.982489467667545
+122,O=C=[Pt] + O=[Pt] <=> O=C=O.[Pt] + [Pt],CH4Conv,23.954405841692516
+123,[OH] + [Pt] <=> O[Pt],CH4Conv,23.953841255539835
+124,O + 2 [Pt] <=> O[Pt] + [Pt],COYield,23.91031758876139
+125,O + [Pt] <=> O.[Pt],COYield,23.037170514685076
+126,C~[Pt] + [H][H] <=> C=[Pt],COYield,22.90155724983174
+127,C=[Pt] + C~[Pt] <=> 2 C#[Pt],COYield,22.898682160802004
+128,CC=O + 2 [Pt] <=> C[Pt] + O=C[Pt],COYield,22.880993382666254
+129,O=C=O + [Pt] <=> O=C=O.[Pt],COYield,22.874843194206683
+130,C~[Pt] + O=[Pt] <=> O=C=[Pt] + [Pt],COYield,22.872094456697464
+131,CO + 2 [Pt] <=> C[Pt] + O[Pt],COYield,22.87209434087461
+132,C=[Pt] + O[Pt] <=> C[Pt] + O=[Pt],COYield,22.872094338243127
+133,C=O + 2 [Pt] <=> O=C[Pt] + [Pt],COYield,22.87209431726805
+134,[CH3] + [Pt] <=> C[Pt],COYield,22.868670944731328
+135,O=C[Pt] + C~[Pt] <=> C#[Pt] + O=C=[Pt],COYield,22.86866499487019
+136,O=C[Pt] + C#[Pt] <=> C=[Pt] + O=C=[Pt],COYield,22.86866498970109
+137,[CH]C + 2 [Pt] <=> C[Pt] + C#[Pt],COYield,22.8686649869813
+138,CC + 2 [Pt] <=> 2 C[Pt],COYield,22.85863084937633
+139,C + 2 [Pt] <=> C[Pt] + [Pt],COYield,22.857863042914197
+140,C[Pt] + C~[Pt] <=> C=[Pt] + C#[Pt],COYield,22.85694413642508
+141,C~[Pt] + O[Pt] <=> C#[Pt] + O=[Pt],COYield,22.856944128856334
+142,C + [Pt] <=> C.[Pt],COYield,22.85694412804719
+143,[H][H] + [Pt] <=> [H][H].[Pt],COYield,22.856944127302107
+144,C~[Pt] + O=[Pt] <=> O=C=[Pt] + [Pt],CH4Conv,21.218358550978135
+145,C=[Pt] + C~[Pt] <=> 2 C#[Pt],CH4Conv,21.21835842604836
+146,2 C=[Pt] <=> C[Pt] + C#[Pt],CH4Conv,21.21835842239901
+147,[H][H] + [Pt] <=> [H][H].[Pt],CH4Conv,21.2183584151026
+148,C + O[Pt] + [Pt] <=> C[Pt] + O.[Pt],CH4Conv,21.20673764829764
+149,C + 2 [Pt] <=> C[Pt] + [Pt],CH4Conv,21.205211385534447
+150,[CH3] + [Pt] <=> C[Pt],CH4Conv,21.17818878865653
+151,C~[Pt] + [H][H] <=> C=[Pt],CH4Conv,21.17109865537386
+152,C[Pt] + C~[Pt] <=> C=[Pt] + C#[Pt],CH4Conv,21.17109860750391
+153,CC + 2 [Pt] <=> 2 C[Pt],CH4Conv,21.17109601023566
+154,C#[Pt] + [Pt] <=> C~[Pt] + [Pt],CH4Conv,21.15613018638098
+155,C=[Pt] + O=C[Pt] <=> C[Pt] + O=C=[Pt],CH4Conv,21.15174575158838
+156,[Pt] + O=[Pt] <=> O[Pt] + [Pt],CH4Conv,21.110281950829023
+157,O=C[Pt] + O=[Pt] <=> O[Pt] + O=C=[Pt],H2Yield,20.73028939597036
+158,O=C=O.[Pt] + [Pt] <=> O[Pt] + O=C=[Pt],H2Yield,20.597635025125967
+159,O=C=[Pt] + O=[Pt] <=> O=C=O.[Pt] + [Pt],COSelec,20.559569073013712
+160,O.[Pt] + O=[Pt] <=> 2 O[Pt],O2Conv,20.55035544652075
+161,O.[Pt] + O=[Pt] <=> 2 O[Pt],SynGasYield,20.502400652638304
+162,O + [Pt] <=> O.[Pt],CH4Conv,20.096670787565643
+163,O=C=O + [Pt] <=> O=C=O.[Pt],CH4Conv,20.09626374020812
+164,C=O + 2 [Pt] <=> O=C[Pt] + [Pt],CH4Conv,20.09334848394078
+165,CO + 2 [Pt] <=> C[Pt] + O[Pt],CH4Conv,20.09334847492717
+166,C=[Pt] + O[Pt] <=> C[Pt] + O=[Pt],CH4Conv,20.093348474828108
+167,O=C[Pt] + C#[Pt] <=> C=[Pt] + O=C=[Pt],CH4Conv,20.086655682231594
+168,[CH]C + 2 [Pt] <=> C[Pt] + C#[Pt],CH4Conv,20.086655672204735
+169,O=C[Pt] + C~[Pt] <=> C#[Pt] + O=C=[Pt],CH4Conv,20.086655668607282
+170,C + [Pt] <=> C.[Pt],CH4Conv,20.076317581098056
+171,O + 2 [Pt] <=> O[Pt] + [Pt],CH4Conv,20.065724447516924
+172,C + O=[Pt] + [Pt] <=> C[Pt] + O[Pt],SynGasSelec,19.773053216165078
+173,C + O=[Pt] + [Pt] <=> C[Pt] + O[Pt],DistToMaxT,19.691383371184507
+174,C=[Pt] + [Pt] <=> C[Pt] + [Pt],DistToMaxT,19.18362701618421
+175,C=[Pt] + [Pt] <=> C[Pt] + [Pt],SynGasSelec,19.182698267560014
+176,O + [Pt] <=> O.[Pt],O2Conv,18.803676660485927
+177,C~[Pt] + [H][H] <=> C=[Pt],O2Conv,18.63457168976504
+178,C=[Pt] + C~[Pt] <=> 2 C#[Pt],O2Conv,18.630145699589573
+179,CC=O + 2 [Pt] <=> C[Pt] + O=C[Pt],O2Conv,18.607006237396472
+180,O=C=O + [Pt] <=> O=C=O.[Pt],O2Conv,18.59604151830043
+181,C~[Pt] + O=[Pt] <=> O=C=[Pt] + [Pt],O2Conv,18.59360899596279
+182,CO + 2 [Pt] <=> C[Pt] + O[Pt],O2Conv,18.593608903070184
+183,C=[Pt] + O[Pt] <=> C[Pt] + O=[Pt],O2Conv,18.593608898721484
+184,C=O + 2 [Pt] <=> O=C[Pt] + [Pt],O2Conv,18.593608866744468
+185,O=C[Pt] + C#[Pt] <=> C=[Pt] + O=C=[Pt],O2Conv,18.583917555427302
+186,O=C[Pt] + C~[Pt] <=> C#[Pt] + O=C=[Pt],O2Conv,18.583917548015968
+187,[CH]C + 2 [Pt] <=> C[Pt] + C#[Pt],O2Conv,18.58391754347633
+188,[CH3] + [Pt] <=> C[Pt],O2Conv,18.583917332575304
+189,CC + 2 [Pt] <=> 2 C[Pt],O2Conv,18.574905365806252
+190,C + 2 [Pt] <=> C[Pt] + [Pt],O2Conv,18.574884683983782
+191,C[Pt] + C~[Pt] <=> C=[Pt] + C#[Pt],O2Conv,18.574362402314208
+192,[H][H] + [Pt] <=> [H][H].[Pt],O2Conv,18.57436240173652
+193,C~[Pt] + O[Pt] <=> C#[Pt] + O=[Pt],O2Conv,18.574362400360503
+194,C + [Pt] <=> C.[Pt],O2Conv,18.57436239972737
+195,O=C=O.[Pt] + [Pt] <=> O[Pt] + O=C=[Pt],COYield,17.459082216237224
+196,2 C=[Pt] <=> C[Pt] + C#[Pt],COYield,17.37901307679557
+197,C=[Pt] + O=C[Pt] <=> C[Pt] + O=C=[Pt],COYield,17.374325158846965
+198,O.[Pt] + O=[Pt] <=> 2 O[Pt],H2Selec,17.35291822367222
+199,C#[Pt] + [Pt] <=> C~[Pt] + [Pt],COYield,17.175021410941827
+200,[C-]#[O+] + [Pt] <=> [C-]#[O+].[Pt],COYield,17.16380648113058
+201,O[Pt] + [Pt] <=> O.[Pt] + [Pt],COYield,17.163559464541073
+202,C#[Pt] + O[Pt] <=> C=[Pt] + O=[Pt],COYield,17.1583611266747
+203,[C-]#[O+] + [Pt] <=> O=C=[Pt],COYield,17.15818887100459
+204,C#[Pt] + [Pt] <=> C=[Pt] + [Pt],COYield,17.14837995351584
+205,[OH] + [Pt] <=> O[Pt],COYield,17.14837964614151
+206,[Pt] + O=[Pt] <=> O[Pt] + [Pt],COYield,17.14494667735858
+207,[H][H] + 2 [Pt] <=> 2 [Pt],COYield,17.1371327271733
+208,O.[Pt] + O=[Pt] <=> 2 O[Pt],MaxT,16.804776318003526
+209,O[Pt] + [Pt] <=> O.[Pt] + [Pt],CH4Conv,16.71409480666851
+210,[CH]=O + [Pt] <=> O=C[Pt],CH4Conv,16.711748759541265
+211,C#[Pt] + O[Pt] <=> C=[Pt] + O=[Pt],CH4Conv,16.711748688853554
+212,[C-]#[O+] + [Pt] <=> [C-]#[O+].[Pt],CH4Conv,16.673296589246615
+213,[H][H] + 2 [Pt] <=> 2 [Pt],CH4Conv,16.669738751594082
+214,[H] + [Pt] <=> [Pt],CH4Conv,16.663231438513446
+215,C#[Pt] + [Pt] <=> C=[Pt] + [Pt],CH4Conv,16.661177512619293
+216,O + [Pt] <=> O.[Pt],SynGasYield,15.039052790395665
+217,C~[Pt] + [H][H] <=> C=[Pt],SynGasYield,14.84016540361334
+218,C=[Pt] + C~[Pt] <=> 2 C#[Pt],SynGasYield,14.83436027845518
+219,CC=O + 2 [Pt] <=> C[Pt] + O=C[Pt],SynGasYield,14.80637380903418
+220,O=C=O + [Pt] <=> O=C=O.[Pt],SynGasYield,14.791127780556009
+221,C~[Pt] + O=[Pt] <=> O=C=[Pt] + [Pt],SynGasYield,14.7889764517724
+222,CO + 2 [Pt] <=> C[Pt] + O[Pt],SynGasYield,14.788976379270466
+223,C=[Pt] + O[Pt] <=> C[Pt] + O=[Pt],SynGasYield,14.78897637339475
+224,C=O + 2 [Pt] <=> O=C[Pt] + [Pt],SynGasYield,14.788976331634293
+225,O=C[Pt] + C#[Pt] <=> C=[Pt] + O=C=[Pt],SynGasYield,14.773716566857136
+226,O=C[Pt] + C~[Pt] <=> C#[Pt] + O=C=[Pt],SynGasYield,14.773716548258701
+227,[CH]C + 2 [Pt] <=> C[Pt] + C#[Pt],SynGasYield,14.773716546697342
+228,[CH3] + [Pt] <=> C[Pt],SynGasYield,14.773710850338793
+229,C + 2 [Pt] <=> C[Pt] + [Pt],SynGasYield,14.766256841258425
+230,[H][H] + [Pt] <=> [H][H].[Pt],SynGasYield,14.766087264243353
+231,C~[Pt] + O[Pt] <=> C#[Pt] + O=[Pt],SynGasYield,14.766087260261619
+232,C + [Pt] <=> C.[Pt],SynGasYield,14.766087259785035
+233,C[Pt] + C~[Pt] <=> C=[Pt] + C#[Pt],SynGasYield,14.766087257222214
+234,CC + 2 [Pt] <=> 2 C[Pt],SynGasYield,14.765613144355097
+235,C + O[Pt] + [Pt] <=> C[Pt] + O.[Pt],COYield,14.531961353863885
+236,O=C=O.[Pt] + [Pt] <=> O[Pt] + O=C=[Pt],O2Conv,14.503058223898465
+237,2 C=[Pt] <=> C[Pt] + C#[Pt],O2Conv,14.496058986067235
+238,C=[Pt] + O=C[Pt] <=> C[Pt] + O=C=[Pt],O2Conv,14.481769128966631
+239,C#[Pt] + [Pt] <=> C~[Pt] + [Pt],O2Conv,14.18359503521498
+240,O[Pt] + [Pt] <=> O.[Pt] + [Pt],O2Conv,14.17981980958303
+241,[C-]#[O+] + [Pt] <=> [C-]#[O+].[Pt],O2Conv,14.179203871977425
+242,C#[Pt] + O[Pt] <=> C=[Pt] + O=[Pt],O2Conv,14.171158629508426
+243,[C-]#[O+] + [Pt] <=> O=C=[Pt],O2Conv,14.171107953454484
+244,C#[Pt] + [Pt] <=> C=[Pt] + [Pt],O2Conv,14.15570447064242
+245,[OH] + [Pt] <=> O[Pt],O2Conv,14.155704424266553
+246,[Pt] + O=[Pt] <=> O[Pt] + [Pt],O2Conv,14.138765036455696
+247,[H][H] + 2 [Pt] <=> 2 [Pt],O2Conv,14.129643296237054
+248,O=C=[Pt] + O=[Pt] <=> O=C=O.[Pt] + [Pt],O2Conv,14.117110375345604
+249,[OH] + [Pt] <=> O[Pt],SynGasYield,13.721611933033724
+250,O=C[Pt] + O=[Pt] <=> O[Pt] + O=C=[Pt],COYield,13.441357035016622
+251,[H] + [Pt] <=> [Pt],COYield,13.351751740665168
+252,[OH] + [Pt] <=> O[Pt],SynGasSelec,12.74274359377258
+253,C~[Pt] + O=[Pt] <=> O=C=[Pt] + [Pt],SynGasSelec,12.734896490252433
+254,O + [Pt] <=> O.[Pt],H2Selec,12.47912318164359
+255,O=C=[Pt] + O=[Pt] <=> O=C=O.[Pt] + [Pt],SynGasYield,12.370278627561698
+256,C~[Pt] + [H][H] <=> C=[Pt],H2Selec,12.293781506021448
+257,C=[Pt] + C~[Pt] <=> 2 C#[Pt],H2Selec,12.290612846852865
+258,CC=O + 2 [Pt] <=> C[Pt] + O=C[Pt],H2Selec,12.274342344790197
+259,C + O[Pt] + [Pt] <=> C[Pt] + O.[Pt],O2Conv,12.272735811489651
+260,O=C=O + [Pt] <=> O=C=O.[Pt],H2Selec,12.250120014057636
+261,C~[Pt] + O=[Pt] <=> O=C=[Pt] + [Pt],H2Selec,12.248561979215633
+262,C=O + 2 [Pt] <=> O=C[Pt] + [Pt],H2Selec,12.248561920004144
+263,CO + 2 [Pt] <=> C[Pt] + O[Pt],H2Selec,12.248561915577364
+264,C=[Pt] + O[Pt] <=> C[Pt] + O=[Pt],H2Selec,12.248561913790427
+265,O + 2 [Pt] <=> O[Pt] + [Pt],H2Selec,12.246685466580033
+266,O=C[Pt] + C#[Pt] <=> C=[Pt] + O=C=[Pt],H2Selec,12.241476786668912
+267,O=C[Pt] + C~[Pt] <=> C#[Pt] + O=C=[Pt],H2Selec,12.241476785659367
+268,[CH]C + 2 [Pt] <=> C[Pt] + C#[Pt],H2Selec,12.241476778845362
+269,[CH3] + [Pt] <=> C[Pt],H2Selec,12.24146895095654
+270,CC + 2 [Pt] <=> 2 C[Pt],H2Selec,12.235418616780176
+271,C + 2 [Pt] <=> C[Pt] + [Pt],H2Selec,12.235211985541381
+272,C + [Pt] <=> C.[Pt],H2Selec,12.235174319777705
+273,C[Pt] + C~[Pt] <=> C=[Pt] + C#[Pt],H2Selec,12.235174317582945
+274,[H][H] + [Pt] <=> [H][H].[Pt],H2Selec,12.235174314022636
+275,C~[Pt] + O[Pt] <=> C#[Pt] + O=[Pt],H2Selec,12.235174313948473
+276,O=C=O.[Pt] + [Pt] <=> O[Pt] + O=C=[Pt],CH4Conv,12.1250890784812
+277,O=C[Pt] + O=[Pt] <=> O[Pt] + O=C=[Pt],CH4Conv,12.107052634135153
+278,2 C=[Pt] <=> C[Pt] + C#[Pt],SynGasYield,12.051313339830944
+279,C=[Pt] + O=C[Pt] <=> C[Pt] + O=C=[Pt],SynGasYield,12.028881036406707
+280,O=C=O.[Pt] + [Pt] <=> O[Pt] + O=C=[Pt],SynGasYield,11.996349286464607
+281,C=[Pt] + [Pt] <=> C[Pt] + [Pt],FullOxYield,11.890584915414536
+282,C=[Pt] + [Pt] <=> C[Pt] + [Pt],FullOxSelec,11.890583876007485
+283,[C-]#[O+] + [Pt] <=> O=C=[Pt],SynGasYield,11.880978019233654
+284,O=C[Pt] + O=[Pt] <=> O[Pt] + O=C=[Pt],O2Conv,11.709287563400533
+285,C + O=[Pt] + [Pt] <=> C[Pt] + O[Pt],FullOxYield,11.661865944443338
+286,C + O=[Pt] + [Pt] <=> C[Pt] + O[Pt],FullOxSelec,11.661865388867295
+287,O[Pt] + [Pt] <=> O.[Pt] + [Pt],SynGasYield,11.6496079846981
+288,[C-]#[O+] + [Pt] <=> [C-]#[O+].[Pt],SynGasYield,11.64826026176221
+289,C#[Pt] + [Pt] <=> C~[Pt] + [Pt],SynGasYield,11.646864869578874
+290,C#[Pt] + O[Pt] <=> C=[Pt] + O=[Pt],SynGasYield,11.638010313737485
+291,O=C[Pt] + [Pt] <=> [Pt] + O=C=[Pt],COYield,11.6342577252935
+292,[O][O] + 2 [Pt] <=> 2 O=[Pt],FullOxYield,11.632289971818919
+293,[H] + [Pt] <=> [Pt],O2Conv,11.621397288703694
+294,C#[Pt] + [Pt] <=> C=[Pt] + [Pt],SynGasYield,11.617915061895873
+295,[Pt] + O=[Pt] <=> O[Pt] + [Pt],SynGasYield,11.589522402995605
+296,[H][H] + 2 [Pt] <=> 2 [Pt],SynGasYield,11.579291656566848
+297,[CH]=O + [Pt] <=> O=C[Pt],COYield,11.395786794346016
+298,CO + 2 [Pt] <=> C[Pt] + O[Pt],SynGasSelec,10.999735427361676
+299,O=C=[Pt] + O=[Pt] <=> O=C=O.[Pt] + [Pt],SynGasSelec,10.932605167241876
+300,[CH3] + [Pt] <=> C[Pt],SynGasSelec,10.868999721640892
+301,[C-]#[O+] + [Pt] <=> O=C=[Pt],H2Selec,10.154084853445255
+302,C + O[Pt] + [Pt] <=> C[Pt] + O.[Pt],SynGasYield,10.111325820703733
+303,O=C[Pt] + O=[Pt] <=> O[Pt] + O=C=[Pt],SynGasYield,10.051230927201509
+304,O=C[Pt] + [Pt] <=> [Pt] + O=C=[Pt],O2Conv,10.041770405359804
+305,[H] + [Pt] <=> [Pt],SynGasYield,9.9649823878774
+306,[CH]=O + [Pt] <=> O=C[Pt],O2Conv,9.877652309169218
+307,[CH3] + [Pt] <=> C[Pt],COSelec,9.468160113280693
+308,O=C[Pt] + C~[Pt] <=> C#[Pt] + O=C=[Pt],COSelec,9.468147171214554
+309,[CH]C + 2 [Pt] <=> C[Pt] + C#[Pt],COSelec,9.468147170831706
+310,O=C[Pt] + C#[Pt] <=> C=[Pt] + O=C=[Pt],COSelec,9.468147165624618
+311,O=C=O + [Pt] <=> O=C=O.[Pt],COSelec,9.465222111850283
+312,CC + 2 [Pt] <=> 2 C[Pt],COSelec,9.46511570368742
+313,C + 2 [Pt] <=> C[Pt] + [Pt],COSelec,9.46463313023481
+314,C~[Pt] + O=[Pt] <=> O=C=[Pt] + [Pt],COSelec,9.464292718020694
+315,CO + 2 [Pt] <=> C[Pt] + O[Pt],COSelec,9.464292676896186
+316,C=[Pt] + O[Pt] <=> C[Pt] + O=[Pt],COSelec,9.464292676294466
+317,C=O + 2 [Pt] <=> O=C[Pt] + [Pt],COSelec,9.464292651548591
+318,C[Pt] + C~[Pt] <=> C=[Pt] + C#[Pt],COSelec,9.46385113528364
+319,C~[Pt] + O[Pt] <=> C#[Pt] + O=[Pt],COSelec,9.463851132084725
+320,[H][H] + [Pt] <=> [H][H].[Pt],COSelec,9.46385113062761
+321,C + [Pt] <=> C.[Pt],COSelec,9.463851125678485
+322,CC=O + 2 [Pt] <=> C[Pt] + O=C[Pt],COSelec,9.447083649177344
+323,C=[Pt] + C~[Pt] <=> 2 C#[Pt],COSelec,9.446977841698065
+324,C~[Pt] + [H][H] <=> C=[Pt],COSelec,9.446449840360492
+325,O + [Pt] <=> O.[Pt],COSelec,9.386672863719953
+326,O=C=O.[Pt] + [Pt] <=> O[Pt] + O=C=[Pt],H2Selec,9.044285264662706
+327,2 C=[Pt] <=> C[Pt] + C#[Pt],H2Selec,9.027458857160571
+328,C=[Pt] + O=C[Pt] <=> C[Pt] + O=C=[Pt],H2Selec,9.001412674032126
+329,C#[Pt] + [Pt] <=> C~[Pt] + [Pt],H2Selec,8.710224533572417
+330,[C-]#[O+] + [Pt] <=> [C-]#[O+].[Pt],H2Selec,8.708911672059868
+331,O[Pt] + [Pt] <=> O.[Pt] + [Pt],H2Selec,8.708855244617503
+332,C#[Pt] + O[Pt] <=> C=[Pt] + O=[Pt],H2Selec,8.701872719635425
+333,C#[Pt] + [Pt] <=> C=[Pt] + [Pt],H2Selec,8.669698032855395
+334,[OH] + [Pt] <=> O[Pt],H2Selec,8.669697972502954
+335,[Pt] + O=[Pt] <=> O[Pt] + [Pt],H2Selec,8.65941420339203
+336,[H][H] + 2 [Pt] <=> 2 [Pt],H2Selec,8.647741221800501
+337,C + O[Pt] + [Pt] <=> C[Pt] + O.[Pt],H2Selec,8.630883949438543
+338,O=C=[Pt] + O=[Pt] <=> O=C=O.[Pt] + [Pt],H2Selec,8.630509680648958
+339,CC=O + 2 [Pt] <=> C[Pt] + O=C[Pt],FullOxSelec,8.584589775721486
+340,[C-]#[O+] + [Pt] <=> O=C=[Pt],FullOxSelec,8.584588386564356
+341,O=C[Pt] + [Pt] <=> [Pt] + O=C=[Pt],SynGasYield,8.484459420493124
+342,[CH]=O + [Pt] <=> O=C[Pt],SynGasYield,8.433832935236019
+343,[O][O] + 2 [Pt] <=> 2 O=[Pt],FullOxSelec,8.39962212548999
+344,O.[Pt] + O=[Pt] <=> 2 O[Pt],SynGasSelec,8.321142013687464
+345,CC + 2 [Pt] <=> 2 C[Pt],DistToMaxT,8.176090090886174
+346,[C-]#[O+] + [Pt] <=> [C-]#[O+].[Pt],SynGasSelec,7.9935504218284406
+347,CC + 2 [Pt] <=> 2 C[Pt],SynGasSelec,7.911540825385772
+348,C=[Pt] + O[Pt] <=> C[Pt] + O=[Pt],SynGasSelec,7.870192701382239
+349,[C-]#[O+] + [Pt] <=> O=C=[Pt],SynGasSelec,7.851054414477737
+350,C~[Pt] + O[Pt] <=> C#[Pt] + O=[Pt],SynGasSelec,7.84229281015939
+351,O=C[Pt] + O=[Pt] <=> O[Pt] + O=C=[Pt],SynGasSelec,7.842292780402207
+352,[H][H] + 2 [Pt] <=> 2 [Pt],COSelec,7.813684306645636
+353,[Pt] + O=[Pt] <=> O[Pt] + [Pt],COSelec,7.8092934111379195
+354,C#[Pt] + [Pt] <=> C=[Pt] + [Pt],COSelec,7.802250373509813
+355,[OH] + [Pt] <=> O[Pt],COSelec,7.802250150528563
+356,C#[Pt] + [Pt] <=> C~[Pt] + [Pt],COSelec,7.786569215258376
+357,C#[Pt] + O[Pt] <=> C=[Pt] + O=[Pt],COSelec,7.779524119929662
+358,[C-]#[O+] + [Pt] <=> O=C=[Pt],COSelec,7.7794632628971145
+359,[C-]#[O+] + [Pt] <=> [C-]#[O+].[Pt],COSelec,7.777554460830624
+360,O[Pt] + [Pt] <=> O.[Pt] + [Pt],COSelec,7.777383177201822
+361,O=C=O.[Pt] + [Pt] <=> O[Pt] + O=C=[Pt],COSelec,7.716861943889015
+362,C=[Pt] + O=C[Pt] <=> C[Pt] + O=C=[Pt],COSelec,7.681471532716709
+363,2 C=[Pt] <=> C[Pt] + C#[Pt],COSelec,7.660046659049957
+364,O + [Pt] <=> O.[Pt],SynGasSelec,7.649833094449831
+365,O=C[Pt] + O=[Pt] <=> O[Pt] + O=C=[Pt],H2Selec,7.5248667664388975
+366,[H] + [Pt] <=> [Pt],H2Selec,7.431759708134379
+367,O=C[Pt] + [Pt] <=> [Pt] + O=C=[Pt],H2Selec,7.243186666136719
+368,O=C=[Pt] + O=[Pt] <=> O=C=O.[Pt] + [Pt],DistToMaxT,7.0806808296981565
+369,O=C[Pt] + C~[Pt] <=> C#[Pt] + O=C=[Pt],SynGasSelec,7.049540697152318
+370,O=C=O.[Pt] + [Pt] <=> O[Pt] + O=C=[Pt],SynGasSelec,7.048040902793815
+371,[C-]#[O+] + [Pt] <=> [C-]#[O+].[Pt],DistToMaxT,7.000175761840586
+372,[CH3] + [Pt] <=> C[Pt],DistToMaxT,6.928268580932605
+373,C~[Pt] + O[Pt] <=> C#[Pt] + O=[Pt],DistToMaxT,6.876713062396437
+374,O=C[Pt] + O=[Pt] <=> O[Pt] + O=C=[Pt],DistToMaxT,6.876713054625987
+375,O + 2 [Pt] <=> O[Pt] + [Pt],FullOxSelec,6.810186857887508
+376,O=C=O + [Pt] <=> O=C=O.[Pt],FullOxSelec,6.807332702477111
+377,[CH3] + [Pt] <=> C[Pt],FullOxSelec,6.8070645645198775
+378,[CH]C + 2 [Pt] <=> C[Pt] + C#[Pt],FullOxSelec,6.807057829533585
+379,O=C[Pt] + C~[Pt] <=> C#[Pt] + O=C=[Pt],FullOxSelec,6.80705782939892
+380,O=C[Pt] + C#[Pt] <=> C=[Pt] + O=C=[Pt],FullOxSelec,6.807057828850554
+381,C~[Pt] + O=[Pt] <=> O=C=[Pt] + [Pt],FullOxSelec,6.806443710458327
+382,C=O + 2 [Pt] <=> O=C[Pt] + [Pt],FullOxSelec,6.80644367699942
+383,C=[Pt] + O[Pt] <=> C[Pt] + O=[Pt],FullOxSelec,6.8064436757988975
+384,CO + 2 [Pt] <=> C[Pt] + O[Pt],FullOxSelec,6.80644367566389
+385,C + 2 [Pt] <=> C[Pt] + [Pt],FullOxSelec,6.804292088809133
+386,CC + 2 [Pt] <=> 2 C[Pt],FullOxSelec,6.804267574475036
+387,C[Pt] + C~[Pt] <=> C=[Pt] + C#[Pt],FullOxSelec,6.803539030949111
+388,C + [Pt] <=> C.[Pt],FullOxSelec,6.803539030054037
+389,C~[Pt] + O[Pt] <=> C#[Pt] + O=[Pt],FullOxSelec,6.80353902900571
+390,[H][H] + [Pt] <=> [H][H].[Pt],FullOxSelec,6.803539028735527
+391,C~[Pt] + [H][H] <=> C=[Pt],FullOxSelec,6.799607291922992
+392,C=[Pt] + C~[Pt] <=> 2 C#[Pt],FullOxSelec,6.799266102674858
+393,O + [Pt] <=> O.[Pt],FullOxSelec,6.7806346492476175
+394,[OH] + [Pt] <=> O[Pt],FullOxSelec,6.577011052475938
+395,O=C=[Pt] + O=[Pt] <=> O=C=O.[Pt] + [Pt],FullOxSelec,6.5770110332343314
+396,O=C[Pt] + [Pt] <=> [Pt] + O=C=[Pt],FullOxSelec,6.577010249036549
+397,O.[Pt] + O=[Pt] <=> 2 O[Pt],FullOxSelec,6.577010158683615
+398,O=C=O + [Pt] <=> O=C=O.[Pt],SynGasSelec,6.551464902366468
+399,[OH] + [Pt] <=> O[Pt],DistToMaxT,6.506285874161601
+400,C~[Pt] + O=[Pt] <=> O=C=[Pt] + [Pt],DistToMaxT,6.504561874291402
+401,C + O[Pt] + [Pt] <=> C[Pt] + O.[Pt],COSelec,6.458503331869628
+402,O.[Pt] + O=[Pt] <=> 2 O[Pt],DistToMaxT,6.453481351919462
+403,O=C[Pt] + O=[Pt] <=> O[Pt] + O=C=[Pt],COSelec,6.397925649519912
+404,[H] + [Pt] <=> [Pt],COSelec,6.395273383036318
+405,[C-]#[O+] + [Pt] <=> O=C=[Pt],DistToMaxT,6.332867141761551
+406,[CH]=O + [Pt] <=> O=C[Pt],H2Selec,6.313968288639944
+407,C=[Pt] + O=C[Pt] <=> C[Pt] + O=C=[Pt],FullOxSelec,6.2127118586881815
+408,C#[Pt] + [Pt] <=> C~[Pt] + [Pt],FullOxSelec,6.212711755280052
+409,[Pt] + O=[Pt] <=> O[Pt] + [Pt],FullOxSelec,6.2127116122476576
+410,C + O[Pt] + [Pt] <=> C[Pt] + O.[Pt],FullOxSelec,6.212709012244421
+411,2 C=[Pt] <=> C[Pt] + C#[Pt],FullOxSelec,6.212708956209829
+412,O + [Pt] <=> O.[Pt],DistToMaxT,6.195998376152786
+413,O=C=[Pt] + O=[Pt] <=> O=C=O.[Pt] + [Pt],MaxT,6.070438744024037
+414,O=C=O + [Pt] <=> O=C=O.[Pt],MaxT,5.906780432221392
+415,C + O[Pt] + [Pt] <=> C[Pt] + O.[Pt],SynGasSelec,5.657825727468818
+416,O=C=O + [Pt] <=> O=C=O.[Pt],DistToMaxT,5.653376142001512
+417,CO + 2 [Pt] <=> C[Pt] + O[Pt],DistToMaxT,5.652675525825398
+418,C=[Pt] + O[Pt] <=> C[Pt] + O=[Pt],DistToMaxT,5.652675523633174
+419,C=O + 2 [Pt] <=> O=C[Pt] + [Pt],DistToMaxT,5.652675489296901
+420,O=C[Pt] + C#[Pt] <=> C=[Pt] + O=C=[Pt],DistToMaxT,5.650710370474819
+421,[CH]C + 2 [Pt] <=> C[Pt] + C#[Pt],DistToMaxT,5.650710367191408
+422,O=C[Pt] + C~[Pt] <=> C#[Pt] + O=C=[Pt],DistToMaxT,5.650710364822063
+423,C#[Pt] + [Pt] <=> C~[Pt] + [Pt],SynGasSelec,5.649623927106861
+424,C=O + 2 [Pt] <=> O=C[Pt] + [Pt],SynGasSelec,5.649623846702535
+425,[H][H] + [Pt] <=> [H][H].[Pt],SynGasSelec,5.649623796513366
+426,C + 2 [Pt] <=> C[Pt] + [Pt],DistToMaxT,5.648559472814203
+427,[H][H] + [Pt] <=> [H][H].[Pt],DistToMaxT,5.648129587233916
+428,C[Pt] + C~[Pt] <=> C=[Pt] + C#[Pt],DistToMaxT,5.64812958439729
+429,C + [Pt] <=> C.[Pt],DistToMaxT,5.648129580026487
+430,C~[Pt] + [H][H] <=> C=[Pt],DistToMaxT,5.646608475290841
+431,C=[Pt] + C~[Pt] <=> 2 C#[Pt],DistToMaxT,5.645648101843424
+432,CC=O + 2 [Pt] <=> C[Pt] + O=C[Pt],DistToMaxT,5.640348240169506
+433,[CH]=O + [Pt] <=> O=C[Pt],COSelec,5.437928399210661
+434,O=C[Pt] + [Pt] <=> [Pt] + O=C=[Pt],COSelec,5.106030310332312
+435,C#[Pt] + [Pt] <=> C=[Pt] + [Pt],DistToMaxT,5.048331353721407
+436,[H][H] + 2 [Pt] <=> 2 [Pt],DistToMaxT,5.045573900377222
+437,[Pt] + O=[Pt] <=> O[Pt] + [Pt],DistToMaxT,5.042683943433781
+438,C#[Pt] + [Pt] <=> C~[Pt] + [Pt],DistToMaxT,5.03482586401268
+439,O[Pt] + [Pt] <=> O.[Pt] + [Pt],DistToMaxT,5.032676089408468
+440,C#[Pt] + O[Pt] <=> C=[Pt] + O=[Pt],DistToMaxT,5.031455091835827
+441,C=[Pt] + O=C[Pt] <=> C[Pt] + O=C=[Pt],DistToMaxT,5.027784796994759
+442,2 C=[Pt] <=> C[Pt] + C#[Pt],DistToMaxT,5.015800777372237
+443,O=C=O.[Pt] + [Pt] <=> O[Pt] + O=C=[Pt],DistToMaxT,5.006014708599084
+444,[H] + [Pt] <=> [Pt],FullOxSelec,4.927128433110177
+445,C#[Pt] + [Pt] <=> C=[Pt] + [Pt],FullOxSelec,4.9271281840726315
+446,[C-]#[O+] + [Pt] <=> [C-]#[O+].[Pt],FullOxSelec,4.927128119154271
+447,[H][H] + 2 [Pt] <=> 2 [Pt],FullOxSelec,4.927128091206293
+448,O[Pt] + [Pt] <=> O.[Pt] + [Pt],FullOxSelec,4.92712699828227
+449,[CH]=O + [Pt] <=> O=C[Pt],FullOxSelec,4.9271269868322936
+450,C#[Pt] + O[Pt] <=> C=[Pt] + O=[Pt],FullOxSelec,4.927126986791849
+451,[H] + [Pt] <=> [Pt],SynGasSelec,4.906960570448427
+452,C~[Pt] + [H][H] <=> C=[Pt],SynGasSelec,4.899855971467437
+453,2 C=[Pt] <=> C[Pt] + C#[Pt],SynGasSelec,4.898954503379921
+454,[H][H] + 2 [Pt] <=> 2 [Pt],SynGasSelec,4.897866488810131
+455,C#[Pt] + O[Pt] <=> C=[Pt] + O=[Pt],SynGasSelec,4.892893454410234
+456,[H] + [Pt] <=> [Pt],DistToMaxT,4.867272926553354
+457,CC=O + 2 [Pt] <=> C[Pt] + O=C[Pt],SynGasSelec,4.561971370757775
+458,[CH]=O + [Pt] <=> O=C[Pt],SynGasSelec,4.549009510410909
+459,C=[Pt] + O=C[Pt] <=> C[Pt] + O=C=[Pt],SynGasSelec,4.549009424690407
+460,O=C[Pt] + C#[Pt] <=> C=[Pt] + O=C=[Pt],SynGasSelec,4.5490094160432175
+461,O=C[Pt] + [Pt] <=> [Pt] + O=C=[Pt],SynGasSelec,4.549009404472488
+462,C#[Pt] + [Pt] <=> C=[Pt] + [Pt],SynGasSelec,4.549007122539196
+463,C + [Pt] <=> C.[Pt],SynGasSelec,4.5425205500974855
+464,O[Pt] + [Pt] <=> O.[Pt] + [Pt],SynGasSelec,4.542180081130422
+465,[Pt] + O=[Pt] <=> O[Pt] + [Pt],SynGasSelec,4.54202117740487
+466,C[Pt] + C~[Pt] <=> C=[Pt] + C#[Pt],SynGasSelec,4.5415108878220884
+467,C + 2 [Pt] <=> C[Pt] + [Pt],SynGasSelec,4.452023004711181
+468,O.[Pt] + O=[Pt] <=> 2 O[Pt],FullOxYield,4.125925025661783
+469,C + O[Pt] + [Pt] <=> C[Pt] + O.[Pt],DistToMaxT,3.9858674566095065
+470,O=C=O.[Pt] + [Pt] <=> O[Pt] + O=C=[Pt],FullOxSelec,3.8764446399007517
+471,CC + 2 [Pt] <=> 2 C[Pt],MaxT,3.872416802363465
+472,[CH]=O + [Pt] <=> O=C[Pt],DistToMaxT,3.8177126476897567
+473,O=C[Pt] + O=[Pt] <=> O[Pt] + O=C=[Pt],FullOxSelec,3.7517411829052563
+474,O=C[Pt] + [Pt] <=> [Pt] + O=C=[Pt],DistToMaxT,3.6509698863266737
+475,C=[Pt] + C~[Pt] <=> 2 C#[Pt],SynGasSelec,2.9980796507475254
+476,[CH]C + 2 [Pt] <=> C[Pt] + C#[Pt],SynGasSelec,2.513527033249481
+477,[CH3] + [Pt] <=> C[Pt],MaxT,2.3657567920847216
+478,[C-]#[O+] + [Pt] <=> [C-]#[O+].[Pt],MaxT,2.35411414300389
+479,C~[Pt] + O[Pt] <=> C#[Pt] + O=[Pt],MaxT,2.327000087663585
+480,O=C[Pt] + O=[Pt] <=> O[Pt] + O=C=[Pt],MaxT,2.327000087555793
+481,O + 2 [Pt] <=> O[Pt] + [Pt],MaxT,2.047908322005991
+482,O=C[Pt] + C~[Pt] <=> C#[Pt] + O=C=[Pt],MaxT,1.9268691904756887
+483,[H][H] + [Pt] <=> [H][H].[Pt],MaxT,1.926869169343395
+484,[Pt] + O=[Pt] <=> O[Pt] + [Pt],MaxT,1.92686895948937
+485,O=C=O.[Pt] + [Pt] <=> O[Pt] + O=C=[Pt],MaxT,1.9066527474959056
+486,CO + 2 [Pt] <=> C[Pt] + O[Pt],MaxT,1.6393147177546332
+487,C=[Pt] + O[Pt] <=> C[Pt] + O=[Pt],MaxT,1.5875504573675927
+488,C=C + [Pt] <=> C=C.[Pt],COYield,1.5765601658449966
+489,[CH]C + [Pt] <=> [CH]C.[Pt],COYield,1.5495283883863065
+490,O=C=[Pt] + O=[Pt] <=> O=C=O.[Pt] + [Pt],FullOxYield,1.50936020188084
+491,C~[Pt] + O=[Pt] <=> O=C=[Pt] + [Pt],MaxT,1.48811787919862
+492,[OH] + [Pt] <=> O[Pt],MaxT,1.4861858938010346
+493,[CH3] + [Pt] <=> [CH3].[Pt],COYield,1.3128884382598769
+494,[CH]C + [Pt] <=> [CH]C.[Pt],H2Selec,1.1411936872750117
+495,C=C + [Pt] <=> C=C.[Pt],O2Conv,1.1383252109423527
+496,C=C + [Pt] <=> C=C.[Pt],H2Selec,1.128097053280004
+497,[CH]C + [Pt] <=> [CH]C.[Pt],O2Conv,1.1108808475916054
+498,[CH3] + [Pt] <=> [CH3].[Pt],H2Selec,1.100167959795854
+499,C=C + [Pt] <=> C=C.[Pt],H2Yield,1.0447281807389153
+500,[CH]C + [Pt] <=> [CH]C.[Pt],H2Yield,0.9924843085646144
+501,O=C=O + [Pt] <=> O=C=O.[Pt],FullOxYield,0.96812866148228
+502,[CH3] + [Pt] <=> [CH3].[Pt],O2Conv,0.9550043522237924
+503,C=C + [Pt] <=> C=C.[Pt],SynGasYield,0.9268541258214592
+504,[CH]C + [Pt] <=> [CH]C.[Pt],SynGasYield,0.9013582396117208
+505,[CH3] + [Pt] <=> [CH3].[Pt],H2Yield,0.8341094594531746
+506,[CH]C + [Pt] <=> [CH]C.[Pt],SynGasSelec,0.7911467740633116
+507,[CH3] + [Pt] <=> [CH3].[Pt],SynGasYield,0.7752445946963826
+508,[C-]#[O+] + [Pt] <=> O=C=[Pt],MaxT,0.6707236629411903
+509,[CH]C + [Pt] <=> [CH]C.[Pt],DistToMaxT,0.6692886262204415
+510,[H][H] + 2 [Pt] <=> 2 [Pt],MaxT,0.6690621439562211
+511,CC + 2 [Pt] <=> 2 C[Pt],FullOxYield,0.6687607244588444
+512,[CH]=O + [Pt] <=> O=C[Pt],MaxT,0.6687470750513146
+513,[CH]C + 2 [Pt] <=> C[Pt] + C#[Pt],MaxT,0.6687470582074422
+514,C + [Pt] <=> C.[Pt],MaxT,0.6687470533664134
+515,O[Pt] + [Pt] <=> O.[Pt] + [Pt],MaxT,0.6687470229046746
+516,C#[Pt] + [Pt] <=> C=[Pt] + [Pt],MaxT,0.6687468984975564
+517,C + O[Pt] + [Pt] <=> C[Pt] + O.[Pt],MaxT,0.6685069634616344
+518,[CH3] + [Pt] <=> [CH3].[Pt],SynGasSelec,0.6670795580517513
+519,C=C + [Pt] <=> C=C.[Pt],SynGasSelec,0.6670795383243147
+520,C=[Pt] + C~[Pt] <=> 2 C#[Pt],MaxT,0.616688426268985
+521,C[Pt] + C~[Pt] <=> C=[Pt] + C#[Pt],MaxT,0.5174300750507688
+522,[CH]C + [Pt] <=> [CH]C.[Pt],COSelec,0.4910430081900456
+523,O=C[Pt] + C#[Pt] <=> C=[Pt] + O=C=[Pt],MaxT,0.4853592103526829
+524,C=C + [Pt] <=> C=C.[Pt],COSelec,0.4752126208059533
+525,O=C[Pt] + C~[Pt] <=> C#[Pt] + O=C=[Pt],FullOxYield,0.470971234711949
+526,[H][H] + [Pt] <=> [H][H].[Pt],FullOxYield,0.4709712328797387
+527,[Pt] + O=[Pt] <=> O[Pt] + [Pt],FullOxYield,0.4709711621342856
+528,O=C=O.[Pt] + [Pt] <=> O[Pt] + O=C=[Pt],FullOxYield,0.4708069924849536
+529,[CH3] + [Pt] <=> [CH3].[Pt],DistToMaxT,0.4639153617960772
+530,C=C + [Pt] <=> C=C.[Pt],DistToMaxT,0.4639153505949731
+531,C + 2 [Pt] <=> C[Pt] + [Pt],MaxT,0.4506353929063125
+532,C#[Pt] + [Pt] <=> C~[Pt] + [Pt],MaxT,0.4486728682676972
+533,2 C=[Pt] <=> C[Pt] + C#[Pt],MaxT,0.4486728671753956
+534,C~[Pt] + [H][H] <=> C=[Pt],MaxT,0.44863179356342536
+535,C=O + 2 [Pt] <=> O=C[Pt] + [Pt],MaxT,0.4478682346994162
+536,O=C[Pt] + [Pt] <=> [Pt] + O=C=[Pt],MaxT,0.4477238165624561
+537,C=[Pt] + O=C[Pt] <=> C[Pt] + O=C=[Pt],MaxT,0.4477238158149836
+538,[H] + [Pt] <=> [Pt],MaxT,0.4473605920835491
+539,CC=O + 2 [Pt] <=> C[Pt] + O=C[Pt],MaxT,0.44616033563497776
+540,O + [Pt] <=> O.[Pt],MaxT,0.3978545632271307
+541,O=C(O)[Pt] + [Pt] <=> O[Pt] + O=C=[Pt],SynGasYield,0.3795669027360095
+542,[CH3] + [Pt] <=> [CH3].[Pt],COSelec,0.3631487754026736
+543,C#[Pt] + O[Pt] <=> C=[Pt] + O=[Pt],MaxT,0.3620206349065061
+544,[CH3] + [Pt] <=> [CH3].[Pt],CH4Conv,0.35173849672686397
+545,[CH]C + [Pt] <=> [CH]C.[Pt],CH4Conv,0.3046370253817305
+546,C=C + [Pt] <=> C=C.[Pt],CH4Conv,0.2865000912937308
+547,[CH3] + [Pt] <=> [CH3].[Pt],FullOxSelec,0.26632342641365664
+548,C=[Pt] + O[Pt] <=> C[Pt] + O=[Pt],FullOxYield,0.2652421846615233
+549,O=C(O)[Pt] + [Pt] <=> O[Pt] + O=C=[Pt],SynGasSelec,0.26345992465587176
+550,[C-]#[O+] + [Pt] <=> O=C=[Pt],FullOxYield,0.21105273485083784
+551,CO + 2 [Pt] <=> C[Pt] + O[Pt],FullOxYield,0.21033795229192795
+552,C#[Pt] + O[Pt] <=> C=[Pt] + O=[Pt],FullOxYield,0.2096563408265416
+553,C=O + 2 [Pt] <=> O=C[Pt] + [Pt],FullOxYield,0.20965156092399592
+554,[C-]#[O+] + [Pt] <=> [C-]#[O+].[Pt],FullOxYield,0.2096515605557055
+555,C=[Pt] + O=C[Pt] <=> C[Pt] + O=C=[Pt],FullOxYield,0.20939778165597747
+556,2 C=[Pt] <=> C[Pt] + C#[Pt],FullOxYield,0.20939777950360053
+557,[CH3] + [Pt] <=> C[Pt],FullOxYield,0.20938748508113536
+558,C + O[Pt] + [Pt] <=> C[Pt] + O.[Pt],FullOxYield,0.2092035522249876
+559,C~[Pt] + O=[Pt] <=> O=C=[Pt] + [Pt],FullOxYield,0.2040686785943736
+560,C~[Pt] + O[Pt] <=> C#[Pt] + O=[Pt],FullOxYield,0.19735883727861264
+561,C~[Pt] + [H][H] <=> C=[Pt],FullOxYield,0.19735883401731785
+562,[H][H] + 2 [Pt] <=> 2 [Pt],FullOxYield,0.1972762448561882
+563,[H] + [Pt] <=> [Pt],FullOxYield,0.1972351447071225
+564,O=C(O)[Pt] + [Pt] <=> O[Pt] + O=C=[Pt],O2Conv,0.19645974466794666
+565,C#[Pt] + [Pt] <=> C=[Pt] + [Pt],FullOxYield,0.19560504484085084
+566,[OH] + [Pt] <=> O[Pt],FullOxYield,0.19540028523929545
+567,[CH]C + [Pt] <=> [CH]C.[Pt],FullOxYield,0.19412937047106066
+568,O[Pt] + [Pt] <=> O.[Pt] + [Pt],FullOxYield,0.19248577929715655
+569,C=C + [Pt] <=> C=C.[Pt],FullOxYield,0.19248498279992907
+570,O=C[Pt] + [Pt] <=> [Pt] + O=C=[Pt],FullOxYield,0.19248498093644587
+571,O=C[Pt] + O=[Pt] <=> O[Pt] + O=C=[Pt],FullOxYield,0.19248498071658413
+572,C#[Pt] + [Pt] <=> C~[Pt] + [Pt],FullOxYield,0.19248497964449254
+573,CC=O + 2 [Pt] <=> C[Pt] + O=C[Pt],FullOxYield,0.19248497954044175
+574,C=[Pt] + C~[Pt] <=> 2 C#[Pt],FullOxYield,0.1828372743048085
+575,C[Pt] + C~[Pt] <=> C=[Pt] + C#[Pt],FullOxYield,0.18283692638380603
+576,O[Pt] + O=C=[Pt] <=> O=C[Pt] + O=[Pt],H2Yield,0.1748538526963665
+577,O + 2 [Pt] <=> O[Pt] + [Pt],FullOxYield,0.17425340813921253
+578,O=C[Pt] + C#[Pt] <=> C=[Pt] + O=C=[Pt],FullOxYield,0.17229848335337242
+579,C + 2 [Pt] <=> C[Pt] + [Pt],FullOxYield,0.17137335132541187
+580,[CH]=O + [Pt] <=> O=C[Pt],FullOxYield,0.16935981845427053
+581,[CH]C + 2 [Pt] <=> C[Pt] + C#[Pt],FullOxYield,0.16935981797325067
+582,C + [Pt] <=> C.[Pt],FullOxYield,0.16273745246640806
+583,O + [Pt] <=> O.[Pt],FullOxYield,0.15795618552397706
+584,O[Pt] + O=C=[Pt] <=> O=C[Pt] + O=[Pt],H2Selec,0.1536236599208005
+585,[CH3] + [Pt] <=> [CH3].[Pt],FullOxYield,0.1511692833461099
+586,O[Pt] + O=C=[Pt] <=> O=C[Pt] + O=[Pt],CH4Conv,0.150571042245871
+587,O=C(O)[Pt] + [Pt] <=> O[Pt] + O=C=[Pt],COYield,0.1439153217427246
+588,O[Pt] + O=C=[Pt] <=> O=C[Pt] + O=[Pt],COYield,0.12762503907085604
+589,O[Pt] + O=C=[Pt] <=> O=C[Pt] + O=[Pt],O2Conv,0.12120162388189605
+590,O=C(O)[Pt] + [Pt] <=> O[Pt] + O=C=[Pt],H2Selec,0.11641368147762643
+591,O[Pt] + O=C=[Pt] <=> O=C[Pt] + O=[Pt],SynGasYield,0.11491147921983777
+592,[CH]C + [Pt] <=> [CH]C.[Pt],FullOxSelec,0.09414139574684788
+593,O=C(O)[Pt] + [Pt] <=> O[Pt] + O=C=[Pt],H2Yield,0.08443594603160066
+594,C=C + [Pt] <=> C=C.[Pt],FullOxSelec,0.08302769919152468
+595,O=C(O)[Pt] + [Pt] <=> O[Pt] + O=C=[Pt],DistToMaxT,0.0801393563653733
+596,O[Pt] + O=C=[Pt] <=> O=C[Pt] + O=[Pt],FullOxYield,0.05357894622448742
+597,O[Pt] + O=C=[Pt] <=> O=C[Pt] + O=[Pt],SynGasSelec,0.038652800853635545
+598,O[Pt] + O=C=[Pt] <=> O=C[Pt] + O=[Pt],DistToMaxT,0.032372304519897865
+599,O=C(O)[Pt] + [Pt] <=> O[Pt] + O=C=[Pt],CH4Conv,0.03207603043929472
+600,O[Pt] + O=C=[Pt] <=> O=C[Pt] + O=[Pt],FullOxSelec,0.02800400965457607
+601,O=C(O)[Pt] + [Pt] <=> O[Pt] + O=C=[Pt],COSelec,0.027533693251055164
+602,O[Pt] + O=C=[Pt] <=> O=C[Pt] + O=[Pt],COSelec,0.025958742080291933
+603,O=C(O)[Pt] + [Pt] <=> O[Pt] + O=C=[Pt],MaxT,0.025354467735724133
+604,C=C + [Pt] <=> C=C.[Pt],MaxT,0.019024536439808292
+605,O=C(O)[Pt] + [Pt] <=> O[Pt] + O=C=[Pt],FullOxYield,0.0184938051337928
+606,[CH]C + [Pt] <=> [CH]C.[Pt],MaxT,0.014333554851920413
+607,O[Pt] + O=C=[Pt] <=> O=C[Pt] + O=[Pt],MaxT,0.012265750035835635
+608,O=C(O)[Pt] + [Pt] <=> O[Pt] + O=C=[Pt],FullOxSelec,0.011290893202950335
+609,[CH3] + [Pt] <=> [CH3].[Pt],MaxT,0.006938367236189307
+610,O=C(O)[Pt] + [Pt] <=> O[Pt] + O=C=[Pt],ExitT,0.0
