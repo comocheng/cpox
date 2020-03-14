@@ -1,4 +1,0 @@
-Traceback (most recent call last):
-  File "simulations.py", line 531, in <module>
-    output.append(calculate(r[1], type='output'))
-TypeError: 'NoneType' object is not subscriptable
