@@ -17,6 +17,16 @@ catalystProperties( # default values for Rh(111)
     surfaceSiteDensity=(2.72e-9, 'mol/cm^2'),
 )
 
+# catalystProperties( # default values for Pt(111)
+#     bindingEnergies = {
+#                        'C':(-6.750, 'eV/molecule'),
+#                        'O':(-3.586, 'eV/molecule'),
+#                        'N':(-4.352, 'eV/molecule'),
+#                        'H':(-2.479, 'eV/molecule'),
+#                        },
+#     surfaceSiteDensity=(2.72e-9, 'mol/cm^2'),
+# )
+
 # List of species
 species(
     label='X',
@@ -30,13 +40,13 @@ species(
     structure=SMILES("[CH4]"),
 )
 species(
-   label='O2',
-   reactive=True,
-   structure=adjacencyList(
-       """
-1 O u1 p2 c0 {2,S}
-2 O u1 p2 c0 {1,S}
-"""),
+    label='O2',
+    reactive=True,
+    structure=adjacencyList(
+    """
+    1 O u1 p2 c0 {2,S}
+    2 O u1 p2 c0 {1,S}
+    """),
 )
 
 species(
@@ -133,6 +143,167 @@ species(
     label='C2H4',
     reactive=True,
     structure=SMILES("C=C"),
+)
+
+species(
+    label='CH3CH',
+    reactive=True,
+    structure=SMILES("[CH]C"),
+)
+
+species(
+    label='CH3OO',
+    reactive=True,
+    structure=SMILES("CO[O]"),
+)
+
+species(
+    label='HX',
+    reactive=True,
+    structure=adjacencyList(
+    """
+    1 H u0 p0 c0 {2,S}
+    2 X u0 p0 c0 {1,S}
+    """),
+)
+
+species(
+    label='CO2X',
+    reactive=True,
+    structure=adjacencyList(
+    """
+    1 O u0 p2 c0 {3,D}
+    2 O u0 p2 c0 {3,D}
+    3 C u0 p0 c0 {1,D} {2,D}
+    4 X u0 p0 c0
+    """),
+)
+
+species(
+    label='COX',
+    reactive=True,
+    structure=adjacencyList(
+    """
+    1 O u0 p2 c0 {2,D}
+    2 C u0 p0 c0 {1,D} {3,D}
+    3 X u0 p0 c0 {2,D}
+    """),
+)
+
+species(
+    label='CH4X',
+    reactive=True,
+    structure=adjacencyList(
+    """
+    1 C u0 p0 c0 {2,S} {3,S} {4,S} {5,S}
+    2 H u0 p0 c0 {1,S}
+    3 H u0 p0 c0 {1,S}
+    4 H u0 p0 c0 {1,S}
+    5 H u0 p0 c0 {1,S}
+    6 X u0 p0 c0
+    """),
+)
+
+species(
+    label='OX',
+    reactive=True,
+    structure=adjacencyList(
+    """
+    1 O u0 p2 c0 {2,D}
+    2 X u0 p0 c0 {1,D}
+    """),
+)
+
+species(
+    label='CH2X',
+    reactive=True,
+    structure=adjacencyList(
+    """
+    1 C u0 p0 c0 {2,S} {3,S} {4,D}
+    2 H u0 p0 c0 {1,S}
+    3 H u0 p0 c0 {1,S}
+    4 X u0 p0 c0 {1,D}
+    """),
+)
+
+species(
+    label='CH3X',
+    reactive=True,
+    structure=adjacencyList(
+    """
+    1 C u0 p0 c0 {2,S} {3,S} {4,S} {5,S}
+    2 H u0 p0 c0 {1,S}
+    3 H u0 p0 c0 {1,S}
+    4 H u0 p0 c0 {1,S}
+    5 X u0 p0 c0 {1,S}
+    """),
+)
+
+species(
+    label='CHX',
+    reactive=True,
+    structure=adjacencyList(
+    """
+    1 C u0 p0 c0 {2,S} {3,T}
+    2 H u0 p0 c0 {1,S}
+    3 X u0 p0 c0 {1,T}
+    """),
+)
+
+species(
+    label='CX',
+    reactive=True,
+    structure=adjacencyList(
+    """
+    1 C u0 p0 c0 {2,Q}
+    2 X u0 p0 c0 {1,Q}
+    """),
+)
+
+species(
+    label='H2X',
+    reactive=True,
+    structure=adjacencyList(
+    """
+    1 H u0 p0 c0 {2,S}
+    2 H u0 p0 c0 {1,S}
+    3 X u0 p0 c0
+    """),
+)
+
+species(
+    label='OHX',
+    reactive=True,
+    structure=adjacencyList(
+    """
+    1 O u0 p2 c0 {2,S} {3,S}
+    2 H u0 p0 c0 {1,S}
+    3 X u0 p0 c0 {1,S}
+    """),
+)
+
+species(
+    label='H2OX',
+    reactive=True,
+    structure=adjacencyList(
+    """
+    1 O u0 p2 c0 {2,S} {3,S}
+    2 H u0 p0 c0 {1,S}
+    3 H u0 p0 c0 {1,S}
+    4 X u0 p0 c0
+    """),
+)
+
+species(
+    label='CHOX',
+    reactive=True,
+    structure=adjacencyList(
+    """
+    1 O u0 p2 c0 {2,D}
+    2 C u0 p0 c0 {1,D} {3,S} {4,S}
+    3 H u0 p0 c0 {2,S}
+    4 X u0 p0 c0 {2,S}
+    """),
 )
 
 #----------
