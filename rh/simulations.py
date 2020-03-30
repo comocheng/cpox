@@ -81,6 +81,8 @@ rvol = area * reactor_len * porosity
 # catalyst area in one reactor
 cat_area = cat_area_per_vol * rvol
 
+
+
 def plot_gas(data, x_lim=None):
     """
     Plots gas-phase species profiles through the PFR.
@@ -627,55 +629,58 @@ def sensitivity_worker(data):
         for x in range(len(rxns_translated)):
             sensitivities[x][0] = rxns_translated[x]
         export(sensitivities, ratio)
-    except Exception as e: print(str(e))
+    except Exception as e:
+        print(str(e))
 
 
+if __name__ == "__main__":
 
-ratios = [.6, .7, .8, .9, 1., 1.1, 1.2, 1.3, 1.4, 1.6, 1.8, 2., 2.2, 2.4, 2.6]
-data = []
-num_threads = min(multiprocessing.cpu_count(), len(ratios))
-pool = multiprocessing.Pool(processes=num_threads)
-data = pool.map(run_one_simulation, ratios, 1)
-pool.close()
-pool.join()
 
-output = []
-for r in data:
-    output.append(calculate(r[1], type='output'))
-k = (pd.DataFrame.from_dict(data=output, orient='columns'))
-k.columns = ['C/O ratio', 'CH4 in', 'CH4 out', 'CO out', 'H2 out', 'H2O out', 'CO2 out', 'Exit temp', 'Max temp', 'Dist to max temp', 'O2 conv']
-k.to_csv('data.csv', header=True)  # raw data
+    ratios = [.6, .7, .8, .9, 1., 1.1, 1.2, 1.3, 1.4, 1.6, 1.8, 2., 2.2, 2.4, 2.6]
+    data = []
+    num_threads = min(multiprocessing.cpu_count(), len(ratios))
+    pool = multiprocessing.Pool(processes=num_threads)
+    data = pool.map(run_one_simulation, ratios, 1)
+    pool.close()
+    pool.join()
 
-ratio_comparison = []
-for r in data:
-    ratio_comparison.append([r[0], calculate(r[1], type='ratio')])
+    output = []
+    for r in data:
+        output.append(calculate(r[1], type='output'))
+    k = (pd.DataFrame.from_dict(data=output, orient='columns'))
+    k.columns = ['C/O ratio', 'CH4 in', 'CH4 out', 'CO out', 'H2 out', 'H2O out', 'CO2 out', 'Exit temp', 'Max temp', 'Dist to max temp', 'O2 conv']
+    k.to_csv('data.csv', header=True)  # raw data
 
-plot_ratio_comparisions(ratio_comparison)
+    ratio_comparison = []
+    for r in data:
+        ratio_comparison.append([r[0], calculate(r[1], type='ratio')])
 
-species_dict = rmgpy.data.kinetics.KineticsLibrary().get_species('chemkin/species_dictionary.txt')
-keys = species_dict.keys()
-# get the first listed smiles string for each molecule
-smile = []
-for s in species_dict:
-    smile.append(species_dict[s].molecule[0])
-    if len(species_dict[s].molecule) is not 1:
-        print('There are %d dupllicate smiles for %s:' % (len(species_dict[s].molecule), s))
-        for a in range(len(species_dict[s].molecule)):
-            print('%s' % (species_dict[s].molecule[a]))
+    plot_ratio_comparisions(ratio_comparison)
 
-# translate the molecules from above into just smiles strings
-smiles = []
-for s in smile:
-    smiles.append(s.to_smiles())
-names = dict(zip(keys, smiles))
+    species_dict = rmgpy.data.kinetics.KineticsLibrary().get_species('chemkin/species_dictionary.txt')
+    keys = species_dict.keys()
+    # get the first listed smiles string for each molecule
+    smile = []
+    for s in species_dict:
+        smile.append(species_dict[s].molecule[0])
+        if len(species_dict[s].molecule) is not 1:
+            print('There are %d dupllicate smiles for %s:' % (len(species_dict[s].molecule), s))
+            for a in range(len(species_dict[s].molecule)):
+                print('%s' % (species_dict[s].molecule[a]))
 
-worker_input = []
-dk = 1.0e-2
-num_threads = min(multiprocessing.cpu_count(), len(data))
-pool = multiprocessing.Pool(processes=num_threads)
-worker_input = []
-for r in range(len(data)):
-    worker_input.append([data[r][0], [data[r][1]]])
-pool.map(sensitivity_worker, worker_input, 1)
-pool.close()
-pool.join()
+    # translate the molecules from above into just smiles strings
+    smiles = []
+    for s in smile:
+        smiles.append(s.to_smiles())
+    names = dict(zip(keys, smiles))
+
+    worker_input = []
+    dk = 1.0e-2
+    num_threads = min(multiprocessing.cpu_count(), len(data))
+    pool = multiprocessing.Pool(processes=num_threads)
+    worker_input = []
+    for r in range(len(data)):
+        worker_input.append([data[r][0], [data[r][1]]])
+    pool.map(sensitivity_worker, worker_input, 1)
+    pool.close()
+    pool.join()
