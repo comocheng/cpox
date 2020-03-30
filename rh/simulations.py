@@ -27,7 +27,6 @@ from matplotlib.pyplot import cm
 from matplotlib.ticker import NullFormatter, MaxNLocator, LogLocator
 plt.switch_backend('agg')  # needed for saving figures
 import csv
-from pydas.dassl import DASSL
 import os
 import rmgpy
 import rmg

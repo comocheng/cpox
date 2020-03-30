@@ -12,6 +12,7 @@ All RMG input files are up to date with the 3.0 release of RMG-Py and RMG-databa
 * `simulations.py` runs the Cantera simulations and sensitivity analyses
 * `plot-<size>-grid` makes volcano plots
 
+
 `large-grid` and `small-grid` contain the individual RMG and Cantera simulations for every metal
 
 `base-large-grid` and `base-small-grid` contain volcano plots for the non-perturbed results of interest
