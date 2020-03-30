@@ -60,23 +60,23 @@ minute = 60.0
 t_in = 700  # K - in the paper, it was ~698.15K at the start of the cat surface and ~373.15 for the gas inlet temp
 t_cat = t_in
 length = 70 * mm  # Reactor length - m
-diam = 16.5*mm  # Reactor diameter - in m, from Ref 17 & Ref 18
+diam = 16.5 * mm  # Reactor diameter - in m, from Ref 17 & Ref 18
 area = (diam/2.0)**2*np.pi  # Reactor cross section area (area of tube) in m^2
 porosity = 0.81  # Monolith channel porosity, from Ref 17, sec 2.2.2
 cat_area_per_vol = 1.6e4  # m2/m3, which is 160 cm2/cm3, as used in Horn 2006
 flow_rate = 4.7  # slpm, as seen in as seen in Horn 2007
 tot_flow = 0.208  # constant inlet flow rate in mol/min, equivalent to 4.7 slpm
-flow_rate = flow_rate*.001/60  # m^3/s, as seen in as seen in Horn 2007
-velocity = flow_rate/area  # m/s
+flow_rate = flow_rate * .001 / 60  # m^3/s, as seen in as seen in Horn 2007
+velocity = flow_rate / area  # m/s
 
-# The PFR will be simulated by a chain of 'NReactors' stirred reactors.
-NReactors = 7001
+# The PFR will be simulated by a chain of 'N_reactors' stirred reactors.
+N_reactors = 7001
 
 on_catalyst = 1000  # catalyst length 10mm, from Ref 17
 off_catalyst = 2000
 dt = 1.0
 
-reactor_len = length/(NReactors-1)
+reactor_len = length/(N_reactors-1)
 rvol = area * reactor_len * porosity
 
 # catalyst area in one reactor
@@ -221,16 +221,32 @@ def plot_surf(data):
 
 def monolithFull(gas, surf, temp, mol_in, verbose=False, sens=False):
     """
+    Set up and solve the monolith reactor simulation.
+
     Verbose prints out values as you go along
     Sens is for sensitivity, in the form [perturbation, reaction #]
+
+    Args:
+        gas (ct.Solution): The cantera Solution object of the gas
+        surf (ct.Interface): The cantera Interface object of the surface
+        temp (float): The temperature in Kelvin
+        mol_in (3-tuple or iterable): the inlet molar ratios of (CH4, O2, Ar)
+        verbose (Boolean): whether to print intermediate results
+        sens (False or 2-tuple/list): if not False, then should be a 2-tuple or list [dk, rxn]
+                in which dk = relative change (eg. 0.01) and rxn = the index of the surface reaction rate to change
+
+    Returns:
+        gas_out, # gas molar flow rate in moles/minute
+        surf_out, # surface mole fractions
+        gas_names, # gas species names
+        surf_names, # surface species names
+        dist_array, # distances (in mm)
+        T_array # temperatures (in K)
     """
     ch4, o2, ar = mol_in
-    ratio = ch4/(2*o2)
-    ratio = round(ratio, 1)
-    ch4 = str(ch4)
-    o2 = str(o2)
-    ar = str(ar)
-    X = str('CH4(2):' + ch4 + ', O2(3):' + o2 + ', Ar:' + ar)
+    ratio = ch4 / (2 * o2)
+
+    X = f"CH4(2):{ch4}, O2(3):{o2}, Ar:{ar}"
     gas.TPX = 273.15, ct.one_atm, X  # need to initialize mass flow rate at STP
     # mass_flow_rate = velocity * gas.density_mass * area  # kg/s
     mass_flow_rate = flow_rate * gas.density_mass
@@ -289,7 +305,7 @@ def monolithFull(gas, surf, temp, mol_in, verbose=False, sens=False):
     T_array = []
 
     surf.set_multiplier(0.0)  # no surface reactions until the gauze
-    for n in range(NReactors):
+    for n in range(N_reactors):
         # Set the state of the reservoir to match that of the previous reactor
         gas.TDY = r.thermo.TDY
         upstream.syncState()
@@ -314,15 +330,13 @@ def monolithFull(gas, surf, temp, mol_in, verbose=False, sens=False):
         # elements = ['H', 'O']
         # locations_of_interest = [1000, 1200, 1400, 1600, 1800, 1999]
         # if sens is False:
-        #     for l in locations_of_interest:
-        #         if n == l:
+        #     if n in locations_of_interest:
         #             location = str(int(n / 100))
         #             diagram = ct.ReactionPathDiagram(surf, 'X')
         #             diagram.title = 'rxn path'
         #             diagram.label_threshold = 1e-9
-        #             dot_file = out_dir + '/rxnpath-' + str(ratio) + '-x-' + location + 'mm.dot'
-        #             img_file = out_dir + '/rxnpath-' + str(ratio) + '-x-' + location + 'mm.pdf'
-        #             img_path = os.path.join(out_dir, img_file)
+        #             dot_file = f"{out_dir}/rxnpath-{ratio:.1f}-x-{location}mm.dot"
+        #             img_file = f"{out_dir}/rxnpath-{ratio:.1f}-x-{location}mm.pdf"
         #             diagram.write_dot(dot_file)
         #             os.system('dot {0} -Tpng -o{1} -Gdpi=200'.format(dot_file, img_file))
         #
@@ -330,9 +344,8 @@ def monolithFull(gas, surf, temp, mol_in, verbose=False, sens=False):
         #                 diagram = ct.ReactionPathDiagram(surf, element)
         #                 diagram.title = element + 'rxn path'
         #                 diagram.label_threshold = 1e-9
-        #                 dot_file = out_dir + '/rxnpath-' + str(ratio) + '-surf-' + location + 'mm-' + element + '.dot'
-        #                 img_file = out_dir + '/rxnpath-' + str(ratio) + '-surf-' + location + 'mm-' + element + '.pdf'
-        #                 img_path = os.path.join(out_dir, img_file)
+        #                 dot_file = f"{out_dir}/rxnpath-{ratio:.1f}-x-{location}mm-{element}.dot"
+        #                 img_file = f"{out_dir}/rxnpath-{ratio:.1f}-x-{location}mm-{element}.pdf"
         #                 diagram.write_dot(dot_file)
         #                 os.system('dot {0} -Tpng -o{1} -Gdpi=200'.format(dot_file, img_file))
         # else:
@@ -349,7 +362,6 @@ def monolithFull(gas, surf, temp, mol_in, verbose=False, sens=False):
     surf_names = np.array(surf_names)
     data_out = gas_out, surf_out, gas_names, surf_names, dist_array, T_array
     return data_out
-
 
 def simulationWorker(ratio):
     """
