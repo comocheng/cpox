@@ -218,7 +218,7 @@ def plot_surf(data):
     fig.savefig(out_dir + '/' + str(ratio) + 'surf.pdf', bbox_inches='tight')
 
 
-def monolithFull(gas, surf, temp, mol_in, verbose=False, sens=False):
+def monolith_simulation(gas, surf, temp, mol_in, verbose=False, sens=False):
     """
     Set up and solve the monolith reactor simulation.
 
@@ -362,7 +362,7 @@ def monolithFull(gas, surf, temp, mol_in, verbose=False, sens=False):
     data_out = gas_out, surf_out, gas_names, surf_names, dist_array, T_array
     return data_out
 
-def simulationWorker(ratio):
+def run_one_simulation(ratio):
     """
     Start all of the simulations all at once using multiprocessing
     """
@@ -371,22 +371,13 @@ def simulationWorker(ratio):
     far = 79 * fo2 / 21
     ratio_in = [fch4, fo2, far]  # mol fractions
 
-    a = monolithFull(gas, surf, t_in, ratio_in)
+    a = monolith_simulation(gas, surf, t_in, ratio_in)
     print("Finished simulation at a C/O ratio of {:.1f}".format(ratio))
     gas_out, surf_out, gas_names, surf_names, dist_array, T_array = a
     plot_gas(a)
     plot_gas(a, x_lim=(8,25))
     plot_surf(a)
     return [ratio, [gas_out, gas_names, dist_array, T_array]]
-
-
-ratios = [.6, .7, .8, .9, 1., 1.1, 1.2, 1.3, 1.4, 1.6, 1.8, 2., 2.2, 2.4, 2.6]
-data = []
-num_threads = len(ratios)
-pool = multiprocessing.Pool(processes=num_threads)
-data = pool.map(simulationWorker, ratios, 1)
-pool.close()
-pool.join()
 
 
 def calculate(data, type='sens'):
@@ -532,14 +523,6 @@ def calc_sensitivities(reference, new, index=None):
         return Sens1, Sens2, Sens3, Sens4, Sens5, Sens6, Sens7, Sens8, Sens9, Sens10, Sens11, Sens12, Sens13
 
 
-output = []
-for r in data:
-    output.append(calculate(r[1], type='output'))
-k = (pd.DataFrame.from_dict(data=output, orient='columns'))
-k.columns = ['C/O ratio', 'CH4 in', 'CH4 out', 'CO out', 'H2 out', 'H2O out', 'CO2 out', 'Exit temp', 'Max temp', 'Dist to max temp', 'O2 conv']
-k.to_csv('data.csv', header=True)  # raw data
-
-
 def plot_ratio_comparisions(data):
     ratios = [d[0] for d in data]
     fig, axs = plt.subplots(1, 2)
@@ -579,13 +562,6 @@ def plot_ratio_comparisions(data):
     fig.savefig(out_dir + '/' + 'conversion&selectivity.pdf', bbox_inches='tight')
 
 
-ratio_comparison = []
-for r in data:
-    ratio_comparison.append([r[0], calculate(r[1], type='ratio')])
-
-plot_ratio_comparisions(ratio_comparison)
-
-
 def sensitivity(gas, surf, old_data, temp, dk):
     """
     Rerun simulations for each perturbed surface reaction and compare to the
@@ -613,7 +589,7 @@ def sensitivity(gas, surf, old_data, temp, dk):
 
     # run the simulations
     for rxn in range(surf.n_reactions):
-        gas_out, surf_out, gas_names, surf_names, dist_array, T_array = monolithFull(gas, surf, temp, moles_in, sens=[dk, rxn])
+        gas_out, surf_out, gas_names, surf_names, dist_array, T_array = monolith_simulation(gas, surf, temp, moles_in, sens=[dk, rxn])
         c = [gas_out, gas_names, dist_array, T_array]
         new_data = calculate(c, type='sens')
         sensitivities = calc_sensitivities(reference_data, new_data, index=rxn)
@@ -654,6 +630,28 @@ def sensitivity_worker(data):
     except Exception as e: print(str(e))
 
 
+
+ratios = [.6, .7, .8, .9, 1., 1.1, 1.2, 1.3, 1.4, 1.6, 1.8, 2., 2.2, 2.4, 2.6]
+data = []
+num_threads = min(multiprocessing.cpu_count(), len(ratios))
+pool = multiprocessing.Pool(processes=num_threads)
+data = pool.map(run_one_simulation, ratios, 1)
+pool.close()
+pool.join()
+
+output = []
+for r in data:
+    output.append(calculate(r[1], type='output'))
+k = (pd.DataFrame.from_dict(data=output, orient='columns'))
+k.columns = ['C/O ratio', 'CH4 in', 'CH4 out', 'CO out', 'H2 out', 'H2O out', 'CO2 out', 'Exit temp', 'Max temp', 'Dist to max temp', 'O2 conv']
+k.to_csv('data.csv', header=True)  # raw data
+
+ratio_comparison = []
+for r in data:
+    ratio_comparison.append([r[0], calculate(r[1], type='ratio')])
+
+plot_ratio_comparisions(ratio_comparison)
+
 species_dict = rmgpy.data.kinetics.KineticsLibrary().get_species('chemkin/species_dictionary.txt')
 keys = species_dict.keys()
 # get the first listed smiles string for each molecule
@@ -673,7 +671,7 @@ names = dict(zip(keys, smiles))
 
 worker_input = []
 dk = 1.0e-2
-num_threads = len(data)
+num_threads = min(multiprocessing.cpu_count(), len(data))
 pool = multiprocessing.Pool(processes=num_threads)
 worker_input = []
 for r in range(len(data)):
