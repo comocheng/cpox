@@ -436,49 +436,38 @@ def calculate(data, type='sens'):
 
     ratio = ch4_in / (2 * o2_in)
 
-    if reference_ch4_conv <= 1.0e-8:
-        reference_h2_sel = 1.0e-8
-        reference_co_sel = 1.0e-8
-        reference_syngas_selectivity = 1.0e-8
-        reference_syngas_yield = 1.0e-8
-        reference_co_yield = 1.0e-8
-        reference_h2_yield = 1.0e-8
-        reference_full_oxidation_selectivity = 1.0e-8
-        reference_full_oxidation_yield = 1.0e-8
-        reference_o2_conv = 1.0e-8
-    else:
-        # negative sensitivity is higher selectivity
-        reference_h2_sel = h2_out / (ch4_depletion * 2)  # Sensitivity definition 5: H2 selectivity
-        if reference_h2_sel <= 0:
-            reference_h2_sel = 1.0e-15  # selectivity can't be 0
+    # negative sensitivity is higher selectivity
+    reference_h2_sel = h2_out / (ch4_depletion * 2)  # Sensitivity definition 5: H2 selectivity
+    if reference_h2_sel <= 0:
+        reference_h2_sel = 1.0e-15  # selectivity can't be 0
 
-        reference_co_sel = co_out / ch4_depletion  # Sensitivity definition 3: CO selectivity
-        if reference_co_sel <= 0:
-            reference_co_sel = 1.0e-15  # selectivity can't be 0
+    reference_co_sel = co_out / ch4_depletion  # Sensitivity definition 3: CO selectivity
+    if reference_co_sel <= 0:
+        reference_co_sel = 1.0e-15  # selectivity can't be 0
 
-        reference_syngas_selectivity = reference_co_sel + reference_h2_sel  # Sensitivity definition 1: SYNGAS selectivity
+    reference_syngas_selectivity = reference_co_sel + reference_h2_sel  # Sensitivity definition 1: SYNGAS selectivity
 
-        reference_syngas_yield = reference_syngas_selectivity * reference_ch4_conv  # Sensitivity definition 2: SYNGAS yield
-        if reference_syngas_yield <= 0:
-            reference_syngas_yield = 1.0e-15  # yield can't be 0
+    reference_syngas_yield = reference_syngas_selectivity * reference_ch4_conv  # Sensitivity definition 2: SYNGAS yield
+    if reference_syngas_yield <= 0:
+        reference_syngas_yield = 1.0e-15  # yield can't be 0
 
-        reference_co_yield = co_out / ch4_in  # Sensitivity definition 4: CO % yield
-        # reference_co_yield = reference_co_sel * reference_ch4_conv
+    reference_co_yield = co_out / ch4_in  # Sensitivity definition 4: CO % yield
+    # reference_co_yield = reference_co_sel * reference_ch4_conv
 
-        reference_h2_yield = h2_out / (2 * ch4_in)  # Sensitivity definition 6: H2 % yield
-        # reference_h2_yield = reference_h2_sel * reference_ch4_conv
+    reference_h2_yield = h2_out / (2 * ch4_in)  # Sensitivity definition 6: H2 % yield
+    # reference_h2_yield = reference_h2_sel * reference_ch4_conv
 
-        # Sensitivity definition 8: H2O + CO2 selectivity
-        reference_h2o_sel = h2o_out / (ch4_depletion * 2)
-        reference_co2_sel = co2_out / ch4_depletion
-        if reference_h2o_sel <= 0:
-            reference_h2o_sel = 1.0e-15  # H2O selectivity can't be 0
-        if reference_co2_sel <= 0:
-            reference_co2_sel = 1.0e-15  # CO2 selectivity can't be 0
-        reference_full_oxidation_selectivity = reference_h2o_sel + reference_co2_sel
+    # Sensitivity definition 8: H2O + CO2 selectivity
+    reference_h2o_sel = h2o_out / (ch4_depletion * 2)
+    reference_co2_sel = co2_out / ch4_depletion
+    if reference_h2o_sel <= 0:
+        reference_h2o_sel = 1.0e-15  # H2O selectivity can't be 0
+    if reference_co2_sel <= 0:
+        reference_co2_sel = 1.0e-15  # CO2 selectivity can't be 0
+    reference_full_oxidation_selectivity = reference_h2o_sel + reference_co2_sel
 
-        # Sensitivity definition 9: H2O + CO2 yield
-        reference_full_oxidation_yield = reference_full_oxidation_selectivity * reference_ch4_conv
+    # Sensitivity definition 9: H2O + CO2 yield
+    reference_full_oxidation_yield = reference_full_oxidation_selectivity * reference_ch4_conv
 
     # Sensitivity definition 10: exit temperature
     reference_exit_temp = T_array_data[-1]
