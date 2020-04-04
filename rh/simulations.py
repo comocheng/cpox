@@ -75,6 +75,12 @@ on_catalyst = 1000  # catalyst length 10mm, from Ref 17
 off_catalyst = 2000
 dt = 1.0
 
+# new sensitivities
+# length = 110 * mm  # Reactor length - m
+# N_reactors = 11001
+# on_catalyst = 1000
+# off_catalyst = 11000
+
 reactor_len = length/(N_reactors-1)
 rvol = area * reactor_len * porosity
 
