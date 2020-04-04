@@ -382,6 +382,14 @@ def run_one_simulation(ratio):
     return [ratio, [gas_out, gas_names, dist_array, T_array]]
 
 
+def deriv(gas_out):
+    deriv = []
+    for x in range(len(gas_out) - 1):
+        deriv.append((gas_out[x+1] - gas_out[x])/.01)
+    deriv.append(0.)
+    return deriv
+
+
 def calculate(data, type='sens'):
     """
     Calculate properties of interest from the raw data
@@ -405,11 +413,17 @@ def calculate(data, type='sens'):
             if ch4_out < 0:
                 ch4_out = 0.
             ch4_depletion = ch4_in - ch4_out
-            if ch4_depletion <= 1.0e-8:
-                ch4_depletion = 1.0e-8
-                reference_ch4_conv = 1.0e-8
-            else:
-                reference_ch4_conv = ch4_depletion / ch4_in  # Sensitivity definition 7: CH4 conversion
+            reference_ch4_conv = ch4_depletion / ch4_in  # Sensitivity definition 7: CH4 conversion
+
+            d_ch4 = deriv(x[1][0])
+            reference_max_ch4_conv = min(d_ch4)  # Sensitivity definition 15: maximum rate of CH4 conversion
+
+            for y in range(len(x[1][0])):
+                if (ch4_in - x[1][0][y]) / ch4_in >= 0.95:
+                    reference_dist_to_95_ch4_conv = dist_array_data[y]  # Sensitivity definition 14: distance to 95% CH4 conversion
+                else:
+                    # never reached 95% conversion
+                    reference_dist_to_95_ch4_conv = dist_array_data[-1]
         if x[0] == 'Ar':
             ar = x[1][0][-1]
         if x[0] == 'O2(3)':
@@ -420,11 +434,7 @@ def calculate(data, type='sens'):
             elif o2_out > o2_in:
                 o2_out = o2_in  # O2 can't be created, to make it equal to O2 in
             o2_depletion = o2_in - o2_out
-            if o2_depletion <= 1.0e-8:
-                o2_depletion = 1.0e-8
-                reference_o2_conv = 1.0e-8
-            else:
-                reference_o2_conv = o2_depletion / o2_in  # Sensitivity definition 13: O2 conversion
+            reference_o2_conv = o2_depletion / o2_in  # Sensitivity definition 13: O2 conversion
         if x[0] == 'CO(7)':
             co_out = x[1][0][-1]
         if x[0] == 'H2(6)':
@@ -479,11 +489,11 @@ def calculate(data, type='sens'):
     reference_peak_temp_dist = dist_array_data[T_array_data.index(max(T_array_data))]
 
     if type is 'sens':
-        return reference_syngas_selectivity, reference_syngas_yield, reference_co_sel, reference_co_yield, reference_h2_sel, reference_h2_yield, reference_ch4_conv, reference_full_oxidation_selectivity, reference_full_oxidation_yield, reference_exit_temp, reference_peak_temp, reference_peak_temp_dist, reference_o2_conv
+        return reference_syngas_selectivity, reference_syngas_yield, reference_co_sel, reference_co_yield, reference_h2_sel, reference_h2_yield, reference_ch4_conv, reference_full_oxidation_selectivity, reference_full_oxidation_yield, reference_exit_temp, reference_peak_temp, reference_peak_temp_dist, reference_o2_conv, reference_max_ch4_conv, reference_dist_to_95_ch4_conv
     elif type is 'ratio':
         return reference_co_sel, reference_h2_sel, reference_ch4_conv, reference_exit_temp, reference_o2_conv, reference_co2_sel, reference_h2o_sel
     else:
-        return ratio, ch4_in, ch4_out, co_out, h2_out, h2o_out, co2_out, reference_exit_temp, reference_peak_temp, reference_peak_temp_dist, reference_o2_conv
+        return ratio, ch4_in, ch4_out, co_out, h2_out, h2o_out, co2_out, reference_exit_temp, reference_peak_temp, reference_peak_temp_dist, reference_o2_conv, reference_max_ch4_conv, reference_dist_to_95_ch4_conv
 
 
 def calc_sensitivities(reference, new, index=None):
@@ -506,12 +516,14 @@ def calc_sensitivities(reference, new, index=None):
     Sens10 = (new_exit_temp - reference_exit_temp) / (reference_exit_temp * dk)
     Sens11 = (new_peak_temp - reference_peak_temp) / (reference_peak_temp * dk)
     Sens12 = (new_peak_temp_dist - reference_peak_temp_dist) / (reference_peak_temp_dist * dk)
+    Sens14 = (new_max_ch4_conv - reference_max_ch4_conv) / (reference_max_ch4_conv * dk)
+    Sens15 = (new_dist_to_95_ch4_conv - reference_dist_to_95_ch4_conv) / (reference_dist_to_95_ch4_conv * dk)
 
     if index is not None:
         rxn = surf.reaction_equations()[index]
-        return rxn, Sens1, Sens2, Sens3, Sens4, Sens5, Sens6, Sens7, Sens8, Sens9, Sens10, Sens11, Sens12, Sens13
+        return rxn, Sens1, Sens2, Sens3, Sens4, Sens5, Sens6, Sens7, Sens8, Sens9, Sens10, Sens11, Sens12, Sens13, Sens14, Sens15
     else:
-        return Sens1, Sens2, Sens3, Sens4, Sens5, Sens6, Sens7, Sens8, Sens9, Sens10, Sens11, Sens12, Sens13
+        return Sens1, Sens2, Sens3, Sens4, Sens5, Sens6, Sens7, Sens8, Sens9, Sens10, Sens11, Sens12, Sens13, Sens14, Sens15
 
 
 def plot_ratio_comparisions(data):
@@ -592,7 +604,7 @@ def export(rxns_translated, ratio):
     k = (pd.DataFrame.from_dict(data=rxns_translated, orient='columns'))
     k.columns = ['Reaction', 'SYNGAS Selec', 'SYNGAS Yield', 'CO Selectivity', 'CO % Yield', 'H2 Selectivity', 'H2 % Yield',
                  'CH4 Conversion', 'H2O+CO2 Selectivity', 'H2O+CO2 yield', 'Exit Temp', 'Peak Temp',
-                 'Dist to peak temp', 'O2 Conversion']
+                 'Dist to peak temp', 'O2 Conversion', 'Max CH4 Conv', 'Dist to 95 CH4 Conv']
     out_dir = 'sensitivities'
     os.path.exists(out_dir) or os.makedirs(out_dir)
 
@@ -637,7 +649,7 @@ if __name__ == "__main__":
     for r in data:
         output.append(calculate(r[1], type='output'))
     k = (pd.DataFrame.from_dict(data=output, orient='columns'))
-    k.columns = ['C/O ratio', 'CH4 in', 'CH4 out', 'CO out', 'H2 out', 'H2O out', 'CO2 out', 'Exit temp', 'Max temp', 'Dist to max temp', 'O2 conv']
+    k.columns = ['C/O ratio', 'CH4 in', 'CH4 out', 'CO out', 'H2 out', 'H2O out', 'CO2 out', 'Exit temp', 'Max temp', 'Dist to max temp', 'O2 conv', 'Max CH4 Conv', 'Dist to 95 CH4 Conv']
     k.to_csv('data.csv', header=True)  # raw data
 
     ratio_comparison = []
