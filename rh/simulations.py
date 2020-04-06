@@ -78,7 +78,7 @@ dt = 1.0
 # new sensitivities
 # length = 110 * mm  # Reactor length - m
 # N_reactors = 11001
-# on_catalyst = 1000
+# on_catalyst = 1000  # catalyst length 10mm, from Ref 17
 # off_catalyst = 11000
 
 reactor_len = length/(N_reactors-1)
@@ -86,7 +86,6 @@ rvol = area * reactor_len * porosity
 
 # catalyst area in one reactor
 cat_area = cat_area_per_vol * rvol
-
 
 
 def plot_gas(data, x_lim=None):
@@ -331,6 +330,11 @@ def monolith_simulation(gas, surf, temp, mol_in, verbose=False, sens=False):
         gas_out.append(1000 * 60 * kmole_flow_rate * gas.X.copy())  # molar flow rate in moles/minute
         surf_out.append(surf.X.copy())
 
+        # stop simulation when things are done changing
+        if n >= 2101:
+            if np.max(abs(np.subtract(gas_out[-2], gas_out[-1]))) < 1e-30:
+                break
+
         # make reaction diagrams
         # out_dir = 'rxnpath'
         # os.path.exists(out_dir) or os.makedirs(out_dir)
@@ -425,11 +429,11 @@ def calculate(data, type='sens'):
             reference_max_ch4_conv = min(d_ch4)  # Sensitivity definition 15: maximum rate of CH4 conversion
 
             for y in range(len(x[1][0])):
-                if (ch4_in - x[1][0][y]) / ch4_in >= 0.95:
-                    reference_dist_to_95_ch4_conv = dist_array_data[y]  # Sensitivity definition 14: distance to 95% CH4 conversion
+                if (ch4_in - x[1][0][y]) / ch4_in >= 0.5:
+                    reference_dist_to_50_ch4_conv = dist_array_data[y]  # Sensitivity definition 14: distance to 95% CH4 conversion
                 else:
-                    # never reached 95% conversion
-                    reference_dist_to_95_ch4_conv = dist_array_data[-1]
+                    # never reached 50% conversion
+                    reference_dist_to_50_ch4_conv = 100.
         if x[0] == 'Ar':
             ar = x[1][0][-1]
         if x[0] == 'O2(3)':
@@ -495,17 +499,17 @@ def calculate(data, type='sens'):
     reference_peak_temp_dist = dist_array_data[T_array_data.index(max(T_array_data))]
 
     if type is 'sens':
-        return reference_syngas_selectivity, reference_syngas_yield, reference_co_sel, reference_co_yield, reference_h2_sel, reference_h2_yield, reference_ch4_conv, reference_full_oxidation_selectivity, reference_full_oxidation_yield, reference_exit_temp, reference_peak_temp, reference_peak_temp_dist, reference_o2_conv, reference_max_ch4_conv, reference_dist_to_95_ch4_conv
+        return reference_syngas_selectivity, reference_syngas_yield, reference_co_sel, reference_co_yield, reference_h2_sel, reference_h2_yield, reference_ch4_conv, reference_full_oxidation_selectivity, reference_full_oxidation_yield, reference_exit_temp, reference_peak_temp, reference_peak_temp_dist, reference_o2_conv, reference_max_ch4_conv, reference_dist_to_50_ch4_conv
     elif type is 'ratio':
         return reference_co_sel, reference_h2_sel, reference_ch4_conv, reference_exit_temp, reference_o2_conv, reference_co2_sel, reference_h2o_sel
     else:
-        return ratio, ch4_in, ch4_out, co_out, h2_out, h2o_out, co2_out, reference_exit_temp, reference_peak_temp, reference_peak_temp_dist, reference_o2_conv, reference_max_ch4_conv, reference_dist_to_95_ch4_conv
+        return ratio, ch4_in, ch4_out, co_out, h2_out, h2o_out, co2_out, reference_exit_temp, reference_peak_temp, reference_peak_temp_dist, reference_o2_conv, reference_max_ch4_conv, reference_dist_to_50_ch4_conv
 
 
 def calc_sensitivities(reference, new, index=None):
     """Calculates sensitivities given old simulation results and perturbed simulation results"""
-    reference_syngas_selectivity, reference_syngas_yield, reference_co_sel, reference_co_yield, reference_h2_sel, reference_h2_yield, reference_ch4_conv, reference_full_oxidation_selectivity, reference_full_oxidation_yield, reference_exit_temp, reference_peak_temp, reference_peak_temp_dist, reference_o2_conv = reference
-    new_syngas_selectivity, new_syngas_yield, new_co_sel, new_co_yield, new_h2_sel, new_h2_yield, new_ch4_conv, new_full_oxidation_selectivity, new_full_oxidation_yield, new_exit_temp, new_peak_temp, new_peak_temp_dist, new_o2_conv = new
+    reference_syngas_selectivity, reference_syngas_yield, reference_co_sel, reference_co_yield, reference_h2_sel, reference_h2_yield, reference_ch4_conv, reference_full_oxidation_selectivity, reference_full_oxidation_yield, reference_exit_temp, reference_peak_temp, reference_peak_temp_dist, reference_o2_conv, reference_max_ch4_conv, reference_dist_to_50_ch4_conv = reference
+    new_syngas_selectivity, new_syngas_yield, new_co_sel, new_co_yield, new_h2_sel, new_h2_yield, new_ch4_conv, new_full_oxidation_selectivity, new_full_oxidation_yield, new_exit_temp, new_peak_temp, new_peak_temp_dist, new_o2_conv, new_max_ch4_conv, new_dist_to_50_ch4_conv = new
 
     Sens5 = (new_h2_sel - reference_h2_sel) / (reference_h2_sel * dk)
     Sens3 = (new_co_sel - reference_co_sel) / (reference_co_sel * dk)
@@ -523,7 +527,7 @@ def calc_sensitivities(reference, new, index=None):
     Sens11 = (new_peak_temp - reference_peak_temp) / (reference_peak_temp * dk)
     Sens12 = (new_peak_temp_dist - reference_peak_temp_dist) / (reference_peak_temp_dist * dk)
     Sens14 = (new_max_ch4_conv - reference_max_ch4_conv) / (reference_max_ch4_conv * dk)
-    Sens15 = (new_dist_to_95_ch4_conv - reference_dist_to_95_ch4_conv) / (reference_dist_to_95_ch4_conv * dk)
+    Sens15 = (new_dist_to_50_ch4_conv - reference_dist_to_50_ch4_conv) / (reference_dist_to_50_ch4_conv * dk)
 
     if index is not None:
         rxn = surf.reaction_equations()[index]
@@ -610,7 +614,7 @@ def export(rxns_translated, ratio):
     k = (pd.DataFrame.from_dict(data=rxns_translated, orient='columns'))
     k.columns = ['Reaction', 'SYNGAS Selec', 'SYNGAS Yield', 'CO Selectivity', 'CO % Yield', 'H2 Selectivity', 'H2 % Yield',
                  'CH4 Conversion', 'H2O+CO2 Selectivity', 'H2O+CO2 yield', 'Exit Temp', 'Peak Temp',
-                 'Dist to peak temp', 'O2 Conversion', 'Max CH4 Conv', 'Dist to 95 CH4 Conv']
+                 'Dist to peak temp', 'O2 Conversion', 'Max CH4 Conv', 'Dist to 50 CH4 Conv']
     out_dir = 'sensitivities'
     os.path.exists(out_dir) or os.makedirs(out_dir)
 
@@ -655,7 +659,7 @@ if __name__ == "__main__":
     for r in data:
         output.append(calculate(r[1], type='output'))
     k = (pd.DataFrame.from_dict(data=output, orient='columns'))
-    k.columns = ['C/O ratio', 'CH4 in', 'CH4 out', 'CO out', 'H2 out', 'H2O out', 'CO2 out', 'Exit temp', 'Max temp', 'Dist to max temp', 'O2 conv', 'Max CH4 Conv', 'Dist to 95 CH4 Conv']
+    k.columns = ['C/O ratio', 'CH4 in', 'CH4 out', 'CO out', 'H2 out', 'H2O out', 'CO2 out', 'Exit temp', 'Max temp', 'Dist to max temp', 'O2 conv', 'Max CH4 Conv', 'Dist to 50 CH4 Conv']
     k.to_csv('data.csv', header=True)  # raw data
 
     ratio_comparison = []
