@@ -111,34 +111,34 @@ def plot_gas(data, x_lim=None):
                         species_name = species_name[0:-3]
                     else:
                         species_name = species_name[0:-4]
-                if species_name == "O2":
-                    axs.annotate("O$_2$", fontsize=12, color='y',
-                                    xy=(dist_array[900], gas_out[:, i][900] + gas_out[:, i][900] / 100.0),
-                                    va='bottom', ha='center')
-                elif species_name == "CO2":
-                    axs.annotate("CO$_2$", fontsize=12, color='c',
-                                    xy=(dist_array[2300], gas_out[:, i][2300] + gas_out[:, i][2300] / 10.0), va='bottom',
-                                    ha='center')
-                elif species_name == "CO":
-                    axs.annotate("CO", fontsize=12, color='m',
-                                    xy=(dist_array[1500], gas_out[:, i][1500] + 0.001),
-                                    va='top', ha='center')
-                elif species_name == "H2":
-                    axs.annotate("H$_2$", fontsize=12, color='g',
-                                    xy=(dist_array[2200], gas_out[:, i][2200] - 0.001),
-                                    va='top', ha='center')
-                elif species_name == "CH4":
-                    axs.annotate("CH$_4$", fontsize=12, color='b',
-                                    xy=(dist_array[900], gas_out[:, i][900] + gas_out[:, i][900] / 100.0),
-                                    va='bottom', ha='center')
-                elif species_name == "H2O":
-                    axs.annotate("H$_2$O", fontsize=12, color='k',
-                                    xy=(dist_array[1800], gas_out[:, i][1800] + gas_out[:, i][1800] / 40.0 + 0.001), va='bottom',
-                                    ha='center')
-                else:
-                    axs.annotate(species_name, fontsize=12,
-                                    xy=(dist_array[-1], gas_out[:, i][-1] + gas_out[:, i][-1] / 10.0), va='top',
-                                    ha='center')
+                # if species_name == "O2":
+                #     axs.annotate("O$_2$", fontsize=12, color='y',
+                #                     xy=(dist_array[900], gas_out[:, i][900] + gas_out[:, i][900] / 100.0),
+                #                     va='bottom', ha='center')
+                # elif species_name == "CO2":
+                #     axs.annotate("CO$_2$", fontsize=12, color='c',
+                #                     xy=(dist_array[2300], gas_out[:, i][2300] + gas_out[:, i][2300] / 10.0), va='bottom',
+                #                     ha='center')
+                # elif species_name == "CO":
+                #     axs.annotate("CO", fontsize=12, color='m',
+                #                     xy=(dist_array[1500], gas_out[:, i][1500] + 0.001),
+                #                     va='top', ha='center')
+                # elif species_name == "H2":
+                #     axs.annotate("H$_2$", fontsize=12, color='g',
+                #                     xy=(dist_array[2200], gas_out[:, i][2200] - 0.001),
+                #                     va='top', ha='center')
+                # elif species_name == "CH4":
+                #     axs.annotate("CH$_4$", fontsize=12, color='b',
+                #                     xy=(dist_array[900], gas_out[:, i][900] + gas_out[:, i][900] / 100.0),
+                #                     va='bottom', ha='center')
+                # elif species_name == "H2O":
+                #     axs.annotate("H$_2$O", fontsize=12, color='k',
+                #                     xy=(dist_array[1800], gas_out[:, i][1800] + gas_out[:, i][1800] / 40.0 + 0.001), va='bottom',
+                #                     ha='center')
+                # else:
+                #     axs.annotate(species_name, fontsize=12,
+                #                     xy=(dist_array[-1], gas_out[:, i][-1] + gas_out[:, i][-1] / 10.0), va='top',
+                #                     ha='center')
             else:
                 axs.plot(0, 0)
 
@@ -331,8 +331,8 @@ def monolith_simulation(gas, surf, temp, mol_in, verbose=False, sens=False):
         surf_out.append(surf.X.copy())
 
         # stop simulation when things are done changing
-        if n >= 2101:
-            if np.max(abs(np.subtract(gas_out[-2], gas_out[-1]))) < 1e-30:
+        if n >= 1001:
+            if np.max(abs(np.subtract(gas_out[-2], gas_out[-1]))) < 1e-15:
                 break
 
         # make reaction diagrams
@@ -433,7 +433,7 @@ def calculate(data, type='sens'):
                     reference_dist_to_50_ch4_conv = dist_array_data[y]  # Sensitivity definition 14: distance to 95% CH4 conversion
                 else:
                     # never reached 50% conversion
-                    reference_dist_to_50_ch4_conv = 100.
+                    reference_dist_to_50_ch4_conv = 110.
         if x[0] == 'Ar':
             ar = x[1][0][-1]
         if x[0] == 'O2(3)':
