@@ -1,0 +1,574 @@
+This mechanism contains 39 gas reactions and 42 surface reactions
+Finished simulation at a C/O ratio of 1.2
+Finished simulation at a C/O ratio of 2.6
+Finished simulation at a C/O ratio of 1.1
+Finished simulation at a C/O ratio of 2.4
+Finished simulation at a C/O ratio of 0.7
+Finished simulation at a C/O ratio of 2.0
+Finished simulation at a C/O ratio of 1.8
+Finished simulation at a C/O ratio of 1.6
+Finished simulation at a C/O ratio of 0.6
+Finished simulation at a C/O ratio of 0.9
+Finished simulation at a C/O ratio of 1.4
+Finished simulation at a C/O ratio of 1.3
+Finished simulation at a C/O ratio of 2.2
+Finished simulation at a C/O ratio of 1.0
+Finished simulation at a C/O ratio of 0.8
+Starting sensitivity simulation for a C/O ratio of 2.6
+
+***********************************************************************
+CanteraError thrown by CVodesIntegrator::step:
+CVodes error encountered. Error code: -10
+Exceptions caught during RHS evaluation:
+
+***********************************************************************
+CanteraError thrown by checkFinite:
+ydot contains non-finite elements:
+
+ydot[0] = inf
+ydot[2] = -nan
+ydot[3] = -nan
+ydot[4] = -inf
+ydot[5] = -inf
+ydot[6] = -nan
+ydot[7] = -nan
+ydot[8] = -inf
+ydot[9] = -nan
+ydot[10] = -nan
+ydot[11] = -nan
+ydot[12] = -nan
+ydot[13] = -nan
+ydot[14] = -nan
+ydot[15] = -inf
+ydot[16] = -nan
+ydot[17] = -nan
+ydot[18] = -nan
+ydot[19] = -nan
+ydot[20] = -nan
+ydot[21] = -nan
+ydot[22] = -nan
+ydot[23] = -inf
+ydot[24] = -inf
+ydot[25] = -nan
+ydot[26] = -nan
+ydot[27] = inf
+ydot[28] = -inf
+ydot[29] = -inf
+ydot[30] = -nan
+ydot[31] = -nan
+ydot[32] = -inf
+ydot[33] = -nan
+ydot[34] = inf
+ydot[35] = -inf
+ydot[36] = -nan
+ydot[37] = -inf
+ydot[38] = -nan
+***********************************************************************
+
+
+***********************************************************************
+CanteraError thrown by checkFinite:
+ydot contains non-finite elements:
+
+ydot[0] = inf
+ydot[2] = -nan
+ydot[3] = -nan
+ydot[4] = -inf
+ydot[5] = -inf
+ydot[6] = -nan
+ydot[7] = -nan
+ydot[8] = -inf
+ydot[9] = -nan
+ydot[10] = -nan
+ydot[11] = -nan
+ydot[12] = -nan
+ydot[13] = -nan
+ydot[14] = -nan
+ydot[15] = -inf
+ydot[16] = -nan
+ydot[17] = -nan
+ydot[18] = -nan
+ydot[19] = -nan
+ydot[20] = -nan
+ydot[21] = -nan
+ydot[22] = -nan
+ydot[23] = -inf
+ydot[24] = -inf
+ydot[25] = -nan
+ydot[26] = -nan
+ydot[27] = inf
+ydot[28] = -inf
+ydot[29] = -inf
+ydot[30] = -nan
+ydot[31] = -nan
+ydot[32] = -inf
+ydot[33] = -nan
+ydot[34] = inf
+ydot[35] = -inf
+ydot[36] = -nan
+ydot[37] = -inf
+ydot[38] = -nan
+***********************************************************************
+
+
+***********************************************************************
+CanteraError thrown by checkFinite:
+ydot contains non-finite elements:
+
+ydot[0] = inf
+ydot[2] = -nan
+ydot[3] = -nan
+ydot[4] = -inf
+ydot[5] = -inf
+ydot[6] = -nan
+ydot[7] = -nan
+ydot[8] = -inf
+ydot[9] = -nan
+ydot[10] = -nan
+ydot[11] = -nan
+ydot[12] = -nan
+ydot[13] = -nan
+ydot[14] = -nan
+ydot[15] = -inf
+ydot[16] = -nan
+ydot[17] = -nan
+ydot[18] = -nan
+ydot[19] = -nan
+ydot[20] = -nan
+ydot[21] = -nan
+ydot[22] = -nan
+ydot[23] = -inf
+ydot[24] = -inf
+ydot[25] = -nan
+ydot[26] = -nan
+ydot[27] = inf
+ydot[28] = -inf
+ydot[29] = -inf
+ydot[30] = -nan
+ydot[31] = -nan
+ydot[32] = -inf
+ydot[33] = -nan
+ydot[34] = inf
+ydot[35] = -inf
+ydot[36] = -nan
+ydot[37] = -inf
+ydot[38] = -nan
+***********************************************************************
+
+
+***********************************************************************
+CanteraError thrown by checkFinite:
+ydot contains non-finite elements:
+
+ydot[0] = inf
+ydot[2] = -nan
+ydot[3] = -nan
+ydot[4] = -inf
+ydot[5] = -inf
+ydot[6] = -nan
+ydot[7] = -nan
+ydot[8] = -inf
+ydot[9] = -nan
+ydot[10] = -nan
+ydot[11] = -nan
+ydot[12] = -nan
+ydot[13] = -nan
+ydot[14] = -nan
+ydot[15] = -inf
+ydot[16] = -nan
+ydot[17] = -nan
+ydot[18] = -nan
+ydot[19] = -nan
+ydot[20] = -nan
+ydot[21] = -nan
+ydot[22] = -nan
+ydot[23] = -inf
+ydot[24] = -inf
+ydot[25] = -nan
+ydot[26] = -nan
+ydot[27] = inf
+ydot[28] = -inf
+ydot[29] = -inf
+ydot[30] = -nan
+ydot[31] = -nan
+ydot[32] = -inf
+ydot[33] = -nan
+ydot[34] = inf
+ydot[35] = -inf
+ydot[36] = -nan
+ydot[37] = -inf
+ydot[38] = -nan
+***********************************************************************
+
+
+***********************************************************************
+CanteraError thrown by checkFinite:
+ydot contains non-finite elements:
+
+ydot[0] = inf
+ydot[2] = -nan
+ydot[3] = -nan
+ydot[4] = -inf
+ydot[5] = -inf
+ydot[6] = -nan
+ydot[7] = -nan
+ydot[8] = -inf
+ydot[9] = -nan
+ydot[10] = -nan
+ydot[11] = -nan
+ydot[12] = -nan
+ydot[13] = -nan
+ydot[14] = -nan
+ydot[15] = -inf
+ydot[16] = -nan
+ydot[17] = -nan
+ydot[18] = -nan
+ydot[19] = -nan
+ydot[20] = -nan
+ydot[21] = -nan
+ydot[22] = -nan
+ydot[23] = -inf
+ydot[24] = -inf
+ydot[25] = -nan
+ydot[26] = -nan
+ydot[27] = inf
+ydot[28] = -inf
+ydot[29] = -inf
+ydot[30] = -nan
+ydot[31] = -nan
+ydot[32] = -inf
+ydot[33] = -nan
+ydot[34] = inf
+ydot[35] = -inf
+ydot[36] = -nan
+ydot[37] = -inf
+ydot[38] = -nan
+***********************************************************************
+
+
+***********************************************************************
+CanteraError thrown by checkFinite:
+ydot contains non-finite elements:
+
+ydot[0] = inf
+ydot[2] = -nan
+ydot[3] = -nan
+ydot[4] = -inf
+ydot[5] = -inf
+ydot[6] = -nan
+ydot[7] = -nan
+ydot[8] = -inf
+ydot[9] = -nan
+ydot[10] = -nan
+ydot[11] = -nan
+ydot[12] = -nan
+ydot[13] = -nan
+ydot[14] = -nan
+ydot[15] = -inf
+ydot[16] = -nan
+ydot[17] = -nan
+ydot[18] = -nan
+ydot[19] = -nan
+ydot[20] = -nan
+ydot[21] = -nan
+ydot[22] = -nan
+ydot[23] = -inf
+ydot[24] = -inf
+ydot[25] = -nan
+ydot[26] = -nan
+ydot[27] = inf
+ydot[28] = -inf
+ydot[29] = -inf
+ydot[30] = -nan
+ydot[31] = -nan
+ydot[32] = -inf
+ydot[33] = -nan
+ydot[34] = inf
+ydot[35] = -inf
+ydot[36] = -nan
+ydot[37] = -inf
+ydot[38] = -nan
+***********************************************************************
+
+
+***********************************************************************
+CanteraError thrown by checkFinite:
+ydot contains non-finite elements:
+
+ydot[0] = inf
+ydot[2] = -nan
+ydot[3] = -nan
+ydot[4] = -inf
+ydot[5] = -inf
+ydot[6] = -nan
+ydot[7] = -nan
+ydot[8] = -inf
+ydot[9] = -nan
+ydot[10] = -nan
+ydot[11] = -nan
+ydot[12] = -nan
+ydot[13] = -nan
+ydot[14] = -nan
+ydot[15] = -inf
+ydot[16] = -nan
+ydot[17] = -nan
+ydot[18] = -nan
+ydot[19] = -nan
+ydot[20] = -nan
+ydot[21] = -nan
+ydot[22] = -nan
+ydot[23] = -inf
+ydot[24] = -inf
+ydot[25] = -nan
+ydot[26] = -nan
+ydot[27] = inf
+ydot[28] = -inf
+ydot[29] = -inf
+ydot[30] = -nan
+ydot[31] = -nan
+ydot[32] = -inf
+ydot[33] = -nan
+ydot[34] = inf
+ydot[35] = -inf
+ydot[36] = -nan
+ydot[37] = -inf
+ydot[38] = -nan
+***********************************************************************
+
+
+***********************************************************************
+CanteraError thrown by checkFinite:
+ydot contains non-finite elements:
+
+ydot[0] = inf
+ydot[2] = -nan
+ydot[3] = -nan
+ydot[4] = -inf
+ydot[5] = -inf
+ydot[6] = -nan
+ydot[7] = -nan
+ydot[8] = -inf
+ydot[9] = -nan
+ydot[10] = -nan
+ydot[11] = -nan
+ydot[12] = -nan
+ydot[13] = -nan
+ydot[14] = -nan
+ydot[15] = -inf
+ydot[16] = -nan
+ydot[17] = -nan
+ydot[18] = -nan
+ydot[19] = -nan
+ydot[20] = -nan
+ydot[21] = -nan
+ydot[22] = -nan
+ydot[23] = -inf
+ydot[24] = -inf
+ydot[25] = -nan
+ydot[26] = -nan
+ydot[27] = inf
+ydot[28] = -inf
+ydot[29] = -inf
+ydot[30] = -nan
+ydot[31] = -nan
+ydot[32] = -inf
+ydot[33] = -nan
+ydot[34] = inf
+ydot[35] = -inf
+ydot[36] = -nan
+ydot[37] = -inf
+ydot[38] = -nan
+***********************************************************************
+
+
+***********************************************************************
+CanteraError thrown by checkFinite:
+ydot contains non-finite elements:
+
+ydot[0] = inf
+ydot[2] = -nan
+ydot[3] = -nan
+ydot[4] = -inf
+ydot[5] = -inf
+ydot[6] = -nan
+ydot[7] = -nan
+ydot[8] = -inf
+ydot[9] = -nan
+ydot[10] = -nan
+ydot[11] = -nan
+ydot[12] = -nan
+ydot[13] = -nan
+ydot[14] = -nan
+ydot[15] = -inf
+ydot[16] = -nan
+ydot[17] = -nan
+ydot[18] = -nan
+ydot[19] = -nan
+ydot[20] = -nan
+ydot[21] = -nan
+ydot[22] = -nan
+ydot[23] = -inf
+ydot[24] = -inf
+ydot[25] = -nan
+ydot[26] = -nan
+ydot[27] = inf
+ydot[28] = -inf
+ydot[29] = -inf
+ydot[30] = -nan
+ydot[31] = -nan
+ydot[32] = -inf
+ydot[33] = -nan
+ydot[34] = inf
+ydot[35] = -inf
+ydot[36] = -nan
+ydot[37] = -inf
+ydot[38] = -nan
+***********************************************************************
+
+
+***********************************************************************
+CanteraError thrown by checkFinite:
+ydot contains non-finite elements:
+
+ydot[0] = inf
+ydot[2] = -nan
+ydot[3] = -nan
+ydot[4] = -inf
+ydot[5] = -inf
+ydot[6] = -nan
+ydot[7] = -nan
+ydot[8] = -inf
+ydot[9] = -nan
+ydot[10] = -nan
+ydot[11] = -nan
+ydot[12] = -nan
+ydot[13] = -nan
+ydot[14] = -nan
+ydot[15] = -inf
+ydot[16] = -nan
+ydot[17] = -nan
+ydot[18] = -nan
+ydot[19] = -nan
+ydot[20] = -nan
+ydot[21] = -nan
+ydot[22] = -nan
+ydot[23] = -inf
+ydot[24] = -inf
+ydot[25] = -nan
+ydot[26] = -nan
+ydot[27] = inf
+ydot[28] = -inf
+ydot[29] = -inf
+ydot[30] = -nan
+ydot[31] = -nan
+ydot[32] = -inf
+ydot[33] = -nan
+ydot[34] = inf
+ydot[35] = -inf
+ydot[36] = -nan
+ydot[37] = -inf
+ydot[38] = -nan
+***********************************************************************
+
+
+At t = 1.5231e+11 repeated recoverable right-hand side function errors.
+Components with largest weighted error estimates:
+2: -nan
+3: -nan
+4: -inf
+5: -inf
+8: -inf
+15: -inf
+0: inf
+1: 0
+6: -nan
+7: -nan
+***********************************************************************
+
+Starting sensitivity simulation for a C/O ratio of 1.2
+Finished sensitivity simulation for a C/O ratio of 1.2
+Finished translating for C/O ratio of 1.2
+Starting sensitivity simulation for a C/O ratio of 1.1
+Finished sensitivity simulation for a C/O ratio of 1.1
+Finished translating for C/O ratio of 1.1
+Starting sensitivity simulation for a C/O ratio of 0.6
+Finished sensitivity simulation for a C/O ratio of 0.6
+Finished translating for C/O ratio of 0.6
+Starting sensitivity simulation for a C/O ratio of 0.7
+Finished sensitivity simulation for a C/O ratio of 0.7
+Finished translating for C/O ratio of 0.7
+Starting sensitivity simulation for a C/O ratio of 2.4
+Finished sensitivity simulation for a C/O ratio of 2.4
+Finished translating for C/O ratio of 2.4
+Starting sensitivity simulation for a C/O ratio of 1.3
+Finished sensitivity simulation for a C/O ratio of 1.3
+Finished translating for C/O ratio of 1.3
+Starting sensitivity simulation for a C/O ratio of 1.4
+Finished sensitivity simulation for a C/O ratio of 1.4
+Finished translating for C/O ratio of 1.4
+Starting sensitivity simulation for a C/O ratio of 0.8
+Finished sensitivity simulation for a C/O ratio of 0.8
+Finished translating for C/O ratio of 0.8
+Starting sensitivity simulation for a C/O ratio of 2.0
+Finished sensitivity simulation for a C/O ratio of 2.0
+Finished translating for C/O ratio of 2.0
+Starting sensitivity simulation for a C/O ratio of 2.2
+Finished sensitivity simulation for a C/O ratio of 2.2
+Finished translating for C/O ratio of 2.2
+Starting sensitivity simulation for a C/O ratio of 1.0
+Finished sensitivity simulation for a C/O ratio of 1.0
+Finished translating for C/O ratio of 1.0
+Starting sensitivity simulation for a C/O ratio of 1.8
+Finished sensitivity simulation for a C/O ratio of 1.8
+Finished translating for C/O ratio of 1.8
+Starting sensitivity simulation for a C/O ratio of 0.9
+Finished sensitivity simulation for a C/O ratio of 0.9
+Finished translating for C/O ratio of 0.9
+Starting sensitivity simulation for a C/O ratio of 1.6
+Finished sensitivity simulation for a C/O ratio of 1.6
+Finished translating for C/O ratio of 1.6
+Starting sensitivity simulation for a C/O ratio of 1.1
+Finished sensitivity simulation for a C/O ratio of 1.1
+Finished translating for C/O ratio of 1.1
+Starting sensitivity simulation for a C/O ratio of 1.4
+Finished sensitivity simulation for a C/O ratio of 1.4
+Finished translating for C/O ratio of 1.4
+Starting sensitivity simulation for a C/O ratio of 1.2
+Finished sensitivity simulation for a C/O ratio of 1.2
+Finished translating for C/O ratio of 1.2
+Starting sensitivity simulation for a C/O ratio of 2.4
+Finished sensitivity simulation for a C/O ratio of 2.4
+Finished translating for C/O ratio of 2.4
+Starting sensitivity simulation for a C/O ratio of 0.8
+Finished sensitivity simulation for a C/O ratio of 0.8
+Finished translating for C/O ratio of 0.8
+Starting sensitivity simulation for a C/O ratio of 0.6
+Finished sensitivity simulation for a C/O ratio of 0.6
+Finished translating for C/O ratio of 0.6
+Starting sensitivity simulation for a C/O ratio of 2.6
+Finished sensitivity simulation for a C/O ratio of 2.6
+Finished translating for C/O ratio of 2.6
+Starting sensitivity simulation for a C/O ratio of 1.3
+Finished sensitivity simulation for a C/O ratio of 1.3
+Finished translating for C/O ratio of 1.3
+Starting sensitivity simulation for a C/O ratio of 2.2
+Finished sensitivity simulation for a C/O ratio of 2.2
+Finished translating for C/O ratio of 2.2
+Starting sensitivity simulation for a C/O ratio of 0.7
+Finished sensitivity simulation for a C/O ratio of 0.7
+Finished translating for C/O ratio of 0.7
+Starting sensitivity simulation for a C/O ratio of 1.8
+Finished sensitivity simulation for a C/O ratio of 1.8
+Finished translating for C/O ratio of 1.8
+Starting sensitivity simulation for a C/O ratio of 2.0
+Finished sensitivity simulation for a C/O ratio of 2.0
+Finished translating for C/O ratio of 2.0
+Starting sensitivity simulation for a C/O ratio of 1.6
+Finished sensitivity simulation for a C/O ratio of 1.6
+Finished translating for C/O ratio of 1.6
+Starting sensitivity simulation for a C/O ratio of 0.9
+Finished sensitivity simulation for a C/O ratio of 0.9
+Finished translating for C/O ratio of 0.9
+Starting sensitivity simulation for a C/O ratio of 1.0
+Finished sensitivity simulation for a C/O ratio of 1.0
+Finished translating for C/O ratio of 1.0

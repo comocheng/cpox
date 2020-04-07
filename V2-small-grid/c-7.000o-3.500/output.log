@@ -1,0 +1,78 @@
+This mechanism contains 39 gas reactions and 42 surface reactions
+Finished simulation at a C/O ratio of 0.9
+Finished simulation at a C/O ratio of 2.6
+Finished simulation at a C/O ratio of 2.4
+Finished simulation at a C/O ratio of 1.1
+Finished simulation at a C/O ratio of 1.6
+Finished simulation at a C/O ratio of 1.4
+Finished simulation at a C/O ratio of 1.3
+Finished simulation at a C/O ratio of 0.8
+Finished simulation at a C/O ratio of 1.2
+Finished simulation at a C/O ratio of 2.0
+Finished simulation at a C/O ratio of 1.0
+Finished simulation at a C/O ratio of 0.6
+Finished simulation at a C/O ratio of 2.2
+Finished simulation at a C/O ratio of 1.8
+Finished simulation at a C/O ratio of 0.7
+Starting sensitivity simulation for a C/O ratio of 2.6
+Finished sensitivity simulation for a C/O ratio of 2.6
+Finished translating for C/O ratio of 2.6
+Starting sensitivity simulation for a C/O ratio of 0.9
+Finished sensitivity simulation for a C/O ratio of 0.9
+Finished translating for C/O ratio of 0.9
+Starting sensitivity simulation for a C/O ratio of 2.4
+Finished sensitivity simulation for a C/O ratio of 2.4
+Finished translating for C/O ratio of 2.4
+Starting sensitivity simulation for a C/O ratio of 1.8
+
+***********************************************************************
+CanteraError thrown by CVodesIntegrator::step:
+CVodes error encountered. Error code: -3
+
+At t = 5.07673e+07 and h = 8.27383e-16, the error test failed repeatedly or with |h| = hmin.
+Components with largest weighted error estimates:
+26: 38.3678
+31: -1.15102
+25: -0.0292324
+33: -0.0184507
+32: -0.0075588
+34: 0.000196536
+38: -3.61207e-05
+37: 1.53289e-05
+39: 2.35949e-06
+27: 1.02055e-06
+***********************************************************************
+
+Starting sensitivity simulation for a C/O ratio of 2.2
+Finished sensitivity simulation for a C/O ratio of 2.2
+Finished translating for C/O ratio of 2.2
+Starting sensitivity simulation for a C/O ratio of 1.1
+Finished sensitivity simulation for a C/O ratio of 1.1
+Finished translating for C/O ratio of 1.1
+Starting sensitivity simulation for a C/O ratio of 1.0
+Finished sensitivity simulation for a C/O ratio of 1.0
+Finished translating for C/O ratio of 1.0
+Starting sensitivity simulation for a C/O ratio of 1.3
+Finished sensitivity simulation for a C/O ratio of 1.3
+Finished translating for C/O ratio of 1.3
+Starting sensitivity simulation for a C/O ratio of 0.6
+Finished sensitivity simulation for a C/O ratio of 0.6
+Finished translating for C/O ratio of 0.6
+Starting sensitivity simulation for a C/O ratio of 1.4
+Finished sensitivity simulation for a C/O ratio of 1.4
+Finished translating for C/O ratio of 1.4
+Starting sensitivity simulation for a C/O ratio of 1.6
+Finished sensitivity simulation for a C/O ratio of 1.6
+Finished translating for C/O ratio of 1.6
+Starting sensitivity simulation for a C/O ratio of 1.2
+Finished sensitivity simulation for a C/O ratio of 1.2
+Finished translating for C/O ratio of 1.2
+Starting sensitivity simulation for a C/O ratio of 0.7
+Finished sensitivity simulation for a C/O ratio of 0.7
+Finished translating for C/O ratio of 0.7
+Starting sensitivity simulation for a C/O ratio of 0.8
+Finished sensitivity simulation for a C/O ratio of 0.8
+Finished translating for C/O ratio of 0.8
+Starting sensitivity simulation for a C/O ratio of 2.0
+Finished sensitivity simulation for a C/O ratio of 2.0
+Finished translating for C/O ratio of 2.0
