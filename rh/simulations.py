@@ -76,10 +76,10 @@ off_catalyst = 2000
 dt = 1.0
 
 # new sensitivities
-# length = 110 * mm  # Reactor length - m
-# N_reactors = 11001
+# length = 510 * mm  # Reactor length - m
+# N_reactors = 51001
 # on_catalyst = 1000  # catalyst length 10mm, from Ref 17
-# off_catalyst = 11000
+# off_catalyst = 51000
 
 reactor_len = length/(N_reactors-1)
 rvol = area * reactor_len * porosity
@@ -330,7 +330,7 @@ def monolith_simulation(gas, surf, temp, mol_in, verbose=False, sens=False):
         gas_out.append(1000 * 60 * kmole_flow_rate * gas.X.copy())  # molar flow rate in moles/minute
         surf_out.append(surf.X.copy())
 
-        # stop simulation when things are done changing
+        # stop simulation when things are done changing, to avoid getting so many COVDES errors
         if n >= 1001:
             if np.max(abs(np.subtract(gas_out[-2], gas_out[-1]))) < 1e-15:
                 break
