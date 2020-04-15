@@ -433,7 +433,7 @@ def calculate(data, type='sens'):
                     reference_dist_to_50_ch4_conv = dist_array_data[y]  # Sensitivity definition 14: distance to 95% CH4 conversion
                 else:
                     # never reached 50% conversion
-                    reference_dist_to_50_ch4_conv = 110.
+                    reference_dist_to_50_ch4_conv = 510.
         if x[0] == 'Ar':
             ar = x[1][0][-1]
         if x[0] == 'O2(3)':
