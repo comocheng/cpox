@@ -502,6 +502,8 @@ def calculate(data, type='sens'):
         return reference_syngas_selectivity, reference_syngas_yield, reference_co_sel, reference_co_yield, reference_h2_sel, reference_h2_yield, reference_ch4_conv, reference_full_oxidation_selectivity, reference_full_oxidation_yield, reference_exit_temp, reference_peak_temp, reference_peak_temp_dist, reference_o2_conv, reference_max_ch4_conv, reference_dist_to_50_ch4_conv
     elif type is 'ratio':
         return reference_co_sel, reference_h2_sel, reference_ch4_conv, reference_exit_temp, reference_o2_conv, reference_co2_sel, reference_h2o_sel
+    elif type is 'gas_data':
+        return ratio, reference
     else:
         return ratio, ch4_in, ch4_out, co_out, h2_out, h2o_out, co2_out, reference_exit_temp, reference_peak_temp, reference_peak_temp_dist, reference_o2_conv, reference_max_ch4_conv, reference_dist_to_50_ch4_conv
 
@@ -661,6 +663,17 @@ if __name__ == "__main__":
     k = (pd.DataFrame.from_dict(data=output, orient='columns'))
     k.columns = ['C/O ratio', 'CH4 in', 'CH4 out', 'CO out', 'H2 out', 'H2O out', 'CO2 out', 'Exit temp', 'Max temp', 'Dist to max temp', 'O2 conv', 'Max CH4 Conv', 'Dist to 50 CH4 Conv']
     k.to_csv('data.csv', header=True)  # raw data
+
+    # save gas profiles
+    for r in data:
+        ratio, gas_profiles = calculate(r[1], type='gas_data')
+        names = [i[0] for i in gas_profiles]
+        gas_profiles_output = [i[1] for i in gas_profiles]
+        gas_profiles_output = gas_profiles_output[0]
+        print(gas_profiles_output)
+        k = (pd.DataFrame.from_dict(data=gas_profiles_output, orient='index'))  # orient='index' if in rows
+        k.columns = names
+        k.to_csv('gas_out' + str(ratio) + '.csv', header=True)
 
     ratio_comparison = []
     for r in data:
