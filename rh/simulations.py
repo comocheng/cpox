@@ -665,15 +665,17 @@ if __name__ == "__main__":
     k.to_csv('data.csv', header=True)  # raw data
 
     # save gas profiles
+    out_dir = 'gas_profiles'
+    os.path.exists(out_dir) or os.makedirs(out_dir)
     for r in data:
         ratio, gas_profiles = calculate(r[1], type='gas_data')
         names = [i[0] for i in gas_profiles]
         gas_profiles_output = [i[1] for i in gas_profiles]
-        gas_profiles_output = gas_profiles_output[0]
-        print(gas_profiles_output)
-        k = (pd.DataFrame.from_dict(data=gas_profiles_output, orient='index'))  # orient='index' if in rows
-        k.columns = names
-        k.to_csv('gas_out' + str(ratio) + '.csv', header=True)
+        gas_profiles_out = []
+        for x in gas_profiles_output:
+            gas_profiles_out.append(x[0].tolist())
+        k = (pd.DataFrame(gas_profiles_out))
+        k.to_csv('gas_profiles/gas_out' + str(ratio) + '.csv', header=True)
 
     ratio_comparison = []
     for r in data:
