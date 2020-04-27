@@ -90,7 +90,7 @@ def setup_ct_solution(path_to_cti):
     print(f"Thread ID from threading{threading.get_ident()}")
     i_ar = gas.species_index('Ar')
 
-    
+
     return {'gas':gas, 'surf':surf,"i_ar":i_ar,"n_surf_reactions":surf.n_reactions}
 
 def plot_gas(data, x_lim=None):
@@ -99,7 +99,7 @@ def plot_gas(data, x_lim=None):
 
     xlim is either None or a tuple (x_min, x_max)
     """
-    gas_out, surf_out, gas_names, surf_names, dist_array, T_array, i_ar = data
+    gas_out, surf_out, gas_names, surf_names, dist_array, T_array, i_ar, n_surf_reactions = data
 
     # Plot in mol/min
     fig, axs = plt.subplots()
@@ -193,7 +193,7 @@ def plot_gas(data, x_lim=None):
 
 def plot_surf(data):
     """Plots surface site fractions through the PFR."""
-    gas_out, surf_out, gas_names, surf_names, dist_array, T_array,i_ar = data
+    gas_out, surf_out, gas_names, surf_names, dist_array, T_array, i_ar, n_surf_reactions = data
 
     fig, axs = plt.subplots()
     axs.set_prop_cycle(cycler('color', ['m', 'g', 'b', 'y', 'c', 'r', 'k', 'g']))
@@ -393,7 +393,7 @@ def run_one_simulation(path_to_cti, ratio):
 
     a = monolith_simulation(path_to_cti, t_in, ratio_in)
     print("Finished simulation at a C/O ratio of {:.1f}".format(ratio))
-    gas_out, surf_out, gas_names, surf_names, dist_array, T_array,i_ar,n_surf_reactions = a
+    gas_out, surf_out, gas_names, surf_names, dist_array, T_array, i_ar, n_surf_reactions = a
     plot_gas(a)
     plot_gas(a, x_lim=(8,25))
     plot_surf(a)
@@ -418,7 +418,7 @@ def calculate(data, type='sens'):
                  'ratio' for plotting
     :return:
     """
-    gas_out_data, gas_names_data, dist_array_data, T_array_data = data
+    gas_out_data, gas_names_data, dist_array_data, T_array_data, n_surf_reactions = data
 
     reference = []
     for a in range(len(gas_names_data)):
@@ -591,7 +591,7 @@ def sensitivity(path_to_cti, old_data, temp, dk):
     original simulation (data) to get a numerical value for sensitivity.
     """
     sensitivity_results = []
-    gas_out_data, gas_names_data, dist_array_data, T_array_data,n_surf_reactions = old_data
+    gas_out_data, gas_names_data, dist_array_data, T_array_data, i_ar, n_surf_reactions = old_data
 
     reference = []
     for a in range(len(gas_names_data)):
