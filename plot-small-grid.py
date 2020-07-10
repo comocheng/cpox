@@ -58,6 +58,13 @@ oxygen_range2 = (oxygen_range[0]-c_step/2, oxygen_range[1]+c_step/2)
 extent2 = carbon_range2 + oxygen_range2
 
 
+tol_list = ['10_16_', '10_17_', '10_18_', '10_19_', '10_20_', '10_21_',
+            '10_22_', '10_23_', '10_24_', '11_16_', '11_17_', '11_18_',
+            '11_19_', '11_20_', '11_21_', '11_22_', '11_23_', '11_24_',
+            '12_16_', '12_17_', '12_18_', '12_19_', '12_20_', '12_21_',
+            '12_22_', '12_23_', '12_24_',]
+
+
 def calculate(data):
     ratio = data[1]
     ch4_in = data[2]
@@ -87,20 +94,18 @@ def calculate(data):
     return syngas_sel, syngas_yield, co_sel, co_yield, h2_sel, h2_yield, ch4_conv, fullox_sel, fullox_yield, exit_T, max_T, dist_Tmax, o2_conv
 
 
-def import_data(ratio, file_location=False):
+def import_data(ratio, file_location):
     """
-    This imports dict_conversions_celectivities from the original simulation
+    This imports the data from the original simulation
     """
-    if file_location is False:
-        data = pd.read_csv('./data.csv')
-    else:
-        data = pd.read_csv('./small-grid/' + file_location + '/data.csv')
+    try:
+        data = pd.read_csv('small-grid/' + file_location + '/all-data/' + tol + 'data.csv')
 
-    data = data.get_values()
-    for x in range(len(data)):
-        r = round(data[x][1],1)
-        if r == ratio:
-            return calculate(data[x])
+        data = data.values
+        data = data.tolist()
+        return data
+    except:
+        print('Cannot find ' + file_location + '/all-data/' + tol + 'data.csv')
 
 
 # For close packed surfaces from
@@ -260,11 +265,71 @@ sens_types = ['SynGasSelec', 'SynGasYield', 'COSelec', 'COYield', 'H2Selec',
               'MaxT', 'DistToMaxT', 'O2Conv']
 
 
-def loadWorker(ratio):
-    ans = []
-    for f in array:
-        ans.append(import_data(ratio, file_location=f))
-    return ans
+def average_data(data, type='avg'):
+    """
+    Averages the original simulation data from different tolerences
+    """
+    tol = len(data)
+    ratio = len(data[0])
+    value = len(data[0][0])
+
+    out = []
+    out_var = []
+    for r in range(ratio):
+        fixed_data = []
+        var_data = []
+        for s in range(2, value):
+            tmp_list = []
+            for t in range(tol):
+                tmp_list.append(data[t][r][s])
+
+            avg = statistics.mean(tmp_list)
+            var = statistics.variance(tmp_list)
+            data_new = np.array(tmp_list)
+            q25, q75 = np.percentile(data_new, 25), np.percentile(data_new, 75)
+            iqr = q75 - q25
+            cut_off = iqr * 2
+            lower, upper = q25 - cut_off, q75 + cut_off
+            outliers = [x for x in data_new if x < lower or x > upper]
+            outliers_removed = [x for x in data_new if x >= lower and x <= upper]
+            print(f"Removing {len(outliers)} outliers from {len(data_new)} results for ratio {data[0][r][1]}")
+            avg = statistics.mean(outliers_removed)
+            var = statistics.variance(outliers_removed)
+
+            fixed_data.append(avg)
+            var_data.append(var)
+        fixed_data.insert(0, data[0][r][1])
+        fixed_data.insert(0, data[0][r][0])
+        var_data.insert(0, data[0][r][1])
+        var_data.insert(0, data[0][r][0])
+        out.append(calculate(fixed_data))
+        out_var.append(var_data)
+
+    if type is 'avg':
+        return out
+    elif type is 'var':
+        return out_var
+
+
+def loadWorker(f_location):
+    data = []
+
+    for t in tol_list:
+        data.append(import_data(t, f_location))
+
+    data_filter = [x for x in data if x] # filter out None values
+    data_avg = average_data(data_filter, type='avg')
+    data_var = average_data(data_filter, type='var')
+
+    k = (pd.DataFrame.from_dict(data=data_avg, orient='columns'))
+    # k.columns = ['C/O ratio', 'CH4 in', 'CH4 out', 'CO out', 'H2 out', 'H2O out', 'CO2 out', 'Exit temp', 'Max temp', 'Dist to max temp', 'O2 conv', 'Max CH4 Conv', 'Dist to 50 CH4 Conv']
+    k.to_csv('linearscaling/' + f_location + '/avgdata.csv', header=True)
+
+    k = (pd.DataFrame.from_dict(data=data_var, orient='columns'))
+    # k.columns = ['C/O ratio', 'CH4 in', 'CH4 out', 'CO out', 'H2 out', 'H2O out', 'CO2 out', 'Exit temp', 'Max temp', 'Dist to max temp', 'O2 conv', 'Max CH4 Conv', 'Dist to 50 CH4 Conv']
+    k.to_csv('linearscaling/' + f_location + '/vardata.csv', header=True)
+
+    return data_avg
 
 
 num_threads = len(ratios)
@@ -272,6 +337,15 @@ pool = multiprocessing.Pool(processes=num_threads)
 all_data = pool.map(loadWorker, ratios, 1)
 pool.close()
 pool.join()
+
+reordered_data = []
+for r in range(len(all_data[0])):
+    tmp = []
+    for b in range(len(all_data)):
+        tmp.append(all_data[b][r])
+    reordered_data.append(tmp)
+
+all_data = reordered_data  # rename to what it was before
 
 
 def spansWorker(sens):
@@ -310,7 +384,7 @@ def baseAnimateWorker(sens):
 
 
 sens_index = list(range(len(sens_types)))
-pool = multiprocessing.Pool(processes=13)
+pool = multiprocessing.Pool(processes=15)
 spans = pool.map(spansWorker, sens_index, 1)
 pool.close()
 pool.join()
@@ -329,33 +403,102 @@ pool.close()
 pool.join()
 
 
-def import_sensitivities(ratio, file_location=False, thermo=False):
+def import_sensitivities(ratio, file_location):
     """
     Ratio is the C/O starting gas ratio
-    file_location is the LSR C and O binding energy, fasle to load the base case
-    thermo is either False to load reaction sensitivities or True to load thermo sensitivities
+    file_location is the LSR C and O binding energy, false to load the base case
     """
-    if file_location is False:
-        if thermo is False:
-            data = pd.read_csv('./sensitivities/' + str(ratio) + 'RxnSensitivity.csv')
-        else:
-            data = pd.read_csv('./sensitivities/' + str(ratio) + 'ThermoSensitivity.csv')
-    else:
-        if thermo is False:
-            data = pd.read_csv('./small-grid/' + file_location + '/sensitivities/' + str(ratio) + 'RxnSensitivity.csv')
-        else:
-            data = pd.read_csv('./small-grid/' + file_location + '/sensitivities/' + str(ratio) + 'ThermoSensitivity.csv')
-    data = data.values
-    data = data.tolist()
-    return data
+    tol, ratio = input
+
+    try:
+        data = pd.read_csv('newdata/' + file_location + '/all-sensitivities/' + tol + str(ratio) + 'RxnSensitivity.csv')
+
+        data = data.values
+        data = data.tolist()
+        return data
+    except:
+        print('Cannot find ' + file_location + '/all-sensitivities/' + tol + str(ratio) + 'RxnSensitivity.csv')
 
 
-def loadSensDataWorker(array):
-    rxndata = []
+def average_sensitivities(data, type='avg'):
+    """
+    After loading in all the data at different ratios, average them all together
+    to calculate one "master" sensitivity value
+
+    Yes, it does both but only returns the one that is called.
+    Will rewrite to make it more efficient at a later point in time.
+    """
+    tol = len(data)
+    rxn = len(data[0])
+    sens = len(data[0][0])
+
+
+    out = []
+    out_var = []
+    for r in range(rxn):
+        fixed_data = []
+        var_data = []
+        for s in range(2, sens):
+            tmp_list = []
+            for t in range(tol):
+                tmp_list.append(data[t][r][s])
+
+            avg = statistics.mean(tmp_list)
+            var = statistics.variance(tmp_list)
+            data_new = np.array(tmp_list)
+            q25, q75 = np.percentile(data_new, 25), np.percentile(data_new, 75)
+            iqr = q75 - q25
+            cut_off = iqr * 2
+            lower, upper = q25 - cut_off, q75 + cut_off
+            outliers = [x for x in data_new if x < lower or x > upper]
+            outliers_removed = [x for x in data_new if x >= lower and x <= upper]
+            print(f"Removing {len(outliers)} outliers from {len(data_new)} sensitivity results for reaction {data[0][r][1]}")
+            avg = statistics.mean(outliers_removed)
+            var = statistics.variance(outliers_removed)
+            fixed_data.append(avg)
+            var_data.append(var)
+        fixed_data.insert(0, data[0][r][1])
+        fixed_data.insert(0, data[0][r][0])
+        var_data.insert(0, data[0][r][1])
+        var_data.insert(0, data[0][r][0])
+        out.append(fixed_data)
+        out_var.append(var_data)
+
+    if type is 'avg':
+        return out
+    elif type is 'var':
+        return out_var
+
+
+def loadSensDataWorker(f_location):
+    sensdata = []
+    sens_var = []
+
     for ratio in ratios:
-        rxndata.append(import_sensitivities(ratio, file_location=array))
-        # thermodata.append(import_sensitivities(ratio, file_location=f, thermo=True))
-    return rxndata
+        allsens = []
+        for t in tol_list:
+            i = (t, ratio)
+            allsens.append(import_sensitivities(i, f_location))
+
+        allsens_filter = [x for x in allsens if x] # filter out None values
+        avg_data = average_sensitivities(allsens_filter, type='avg')
+        sensdata.append(avg_data)
+        var_data = average_sensitivities(allsens_filter, type='var')
+        sens_var.append(var_data)
+
+        k = (pd.DataFrame.from_dict(data=avg_data, orient='columns'))
+        # k.columns = ['Reaction', 'SYNGAS Selec', 'SYNGAS Yield', 'CO Selectivity', 'CO % Yield', 'H2 Selectivity', 'H2 % Yield',
+        #              'CH4 Conversion', 'H2O+CO2 Selectivity', 'H2O+CO2 yield', 'Exit Temp', 'Peak Temp',
+        #              'Dist to peak temp', 'O2 Conversion', 'Max CH4 Conv', 'Dist to 50 CH4 Conv']
+        k.to_csv(f"linearscaling/{f_location}/sensitivities/{ratio:.1f}avgRxnSensitivity.csv", header=True)
+
+        k = (pd.DataFrame.from_dict(data=var_data, orient='columns'))
+        # k.columns = ['Reaction', 'SYNGAS Selec', 'SYNGAS Yield', 'CO Selectivity', 'CO % Yield', 'H2 Selectivity', 'H2 % Yield',
+        #              'CH4 Conversion', 'H2O+CO2 Selectivity', 'H2O+CO2 yield', 'Exit Temp', 'Peak Temp',
+        #              'Dist to peak temp', 'O2 Conversion', 'Max CH4 Conv', 'Dist to 50 CH4 Conv']
+        k.to_csv(f"linearscaling/{f_location}/sensitivities/{ratio:.1f}varRxnSensitivity.csv", header=True)
+
+    return sensdata
 
 
 num_threads = max_cpus
@@ -367,8 +510,8 @@ pool.join()
 
 reactions = set()  # create list of unique reactions
 for f in range(len(allrxndata)):  # for each lsr binding energy
-    for r in range(len(allrxndata[f][0])):  # for each reaction
-        reactions.add(allrxndata[f][0][r][1])  # append the reaction itself
+    for r in range(len(allrxndata[f][6])):  # for each reaction
+        reactions.add(allrxndata[f][6][r][1])  # append the reaction itself
 reactions = list(reactions)
 
 
@@ -512,6 +655,7 @@ def sensPlotAnimate(overall_rate, title, axis=False, folder=False):
 
 def sensPlotAnimateWorker(input):
     rxn, s = input
+    print("{}".format(s))
 
     sensitivities = []
     for r in range(len(allrxndata[0])):  # for a single ratio
@@ -526,11 +670,16 @@ def sensPlotAnimateWorker(input):
                 # this reaction didn't show up on this metal, so it isn't
                 # sensitive, so put a placeholder in
                 tmp_sens.append(0.)
-        sensitivities.append(tmp_sens)
+        if len(tmp_sens) != 81:
+            print("Skipping {} {} because sensitivity len is {} but should be 81".format(rxn, sens_index[s], len(tmp_sens)))
+            continue
+        else:
+            sensitivities.append(tmp_sens)
     # standardizing the colors across all ratios
     flat = [item for sublist in sensitivities for item in sublist]
     MAX = max(abs(np.array(flat)))
     STDEV = statistics.stdev(flat)
+    # AVG = (sum(abs(np.array(flat)))/len(flat))*1.5  # cutoff the color plot at x times the average sensitivity
     title = str(rxn) + str(sens_types[s])
     sensPlotAnimate(sensitivities, title, axis=[-1*MAX,MAX], folder='rxnsensitivities-animate')
     sensPlotAnimate(sensitivities, title, axis=[-1*STDEV*2,STDEV*2], folder='rxnsensitivities-animate-stdev')
