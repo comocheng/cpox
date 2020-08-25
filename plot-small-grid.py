@@ -285,16 +285,6 @@ def average_data(data, type='avg'):
 
             avg = statistics.mean(tmp_list)
             var = statistics.variance(tmp_list)
-            data_new = np.array(tmp_list)
-            q25, q75 = np.percentile(data_new, 25), np.percentile(data_new, 75)
-            iqr = q75 - q25
-            cut_off = iqr * 2
-            lower, upper = q25 - cut_off, q75 + cut_off
-            outliers = [x for x in data_new if x < lower or x > upper]
-            outliers_removed = [x for x in data_new if x >= lower and x <= upper]
-            print(f"Removing {len(outliers)} outliers from {len(data_new)} results for ratio {data[0][r][1]}")
-            avg = statistics.mean(outliers_removed)
-            var = statistics.variance(outliers_removed)
 
             fixed_data.append(avg)
             var_data.append(var)
