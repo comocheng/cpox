@@ -1,3 +1,11 @@
 
 *gas_out.csv
 
+large-grid/*/rxnpath/
+large-grid/*/sensitivities/
+large-grid/*/data.csv
+large-grid/*/error.log
+large-grid/*/figures/
+large-grid/*/output.log
+
+
