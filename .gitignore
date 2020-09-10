@@ -8,4 +8,8 @@ large-grid/*/error.log
 large-grid/*/figures/
 large-grid/*/output.log
 
+small-grid/*/run.sh
+small-grid/*/runsimulations.sh
+small-grid/*/error.log
+small-grid/*/output.log
 
