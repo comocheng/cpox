@@ -1,0 +1,46 @@
+{
+    "description": "<p>Data, scripts, and plots for the preprint and article titled '<i>Automated Mechanism Generation Using Linear Scaling Relationships and Sensitivity Analyses applied to Catalytic Partial Oxidation of Methane</i>'</p>", 
+    "license": "MIT", 
+    "title": "Data for Automated Mechanism Generation Using Linear Scaling Relationships and Sensitivity Analyses applied to Catalytic Partial Oxidation of Methane",
+    "upload_type": "dataset", 
+    "creators": [
+        {
+            "affiliation": "Northeastern University", 
+            "name": "Emily Mazeau",
+            "orcid": "0000-0001-8844-9563"
+        }, 
+        {
+            "affiliation": "Northeastern University", 
+            "name": "Priyanka Satpute",
+            "orcid": "0000-0002-7010-5495"
+        }, 
+        {
+            "affiliation": "Brown University", 
+            "name": "Katrin Blondal",
+            "orcid": "0000-0002-0964-8589"
+        }, 
+        {
+            "affiliation": "Brown University", 
+            "name": "C. Franklin Goldsmith",
+            "orcid": "0000-0002-2212-0172"
+        },
+        {
+            "affiliation": "Northeastern University", 
+            "name": "Richard West",
+            "orcid": "0000-0003-3861-6030"
+        }
+    ], 
+    "access_right": "open", 
+    "related_identifiers": [
+        {
+            "scheme": "url", 
+            "identifier": "https://github.com/comocheng/cpox/", 
+            "relation": "isSupplementTo"
+        }, 
+        {
+            "scheme": "doi", 
+            "identifier": "10.5281/zenodo.4023362", 
+            "relation": "isVersionOf"
+        }
+    ]
+}
